@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <h1>hello what</h1>
-    <h2>em là ai hahagh </h2>
+    <h1>Welcome to the Student Management System</h1>
+    <p>Select an option from the menu to get started.</p>
 </body>
 
 </html>

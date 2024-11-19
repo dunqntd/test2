@@ -41,4 +41,11 @@ class LoginController extends Controller
             }
         }
     }
+    public function logout()
+    {
+        $this->view(
+            'Login_v',
+
+        );
+    }
 }

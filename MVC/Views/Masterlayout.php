@@ -7,6 +7,13 @@
     <title>Student Management System</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Public/Css/Home.css">
+    <link rel="stylesheet" href="http://localhost/project_quanlisinhvien/Public/Css/bootstrap.min.css">
+    <script src="http://localhost/project_quanlisinhvien/Public/Js/jquery-3.3.1.slim.min.js"></script>
+    <script src="http://localhost/project_quanlisinhvien/Public/Js/popper.min.js"></script>
+    <script src="http://localhost/project_quanlisinhvien/Public/Js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 </head>
 
@@ -18,7 +25,8 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Profile</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
+
             </ul>
         </nav>
     </header>
@@ -38,8 +46,12 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <h1>Welcome to the Student Management System</h1>
-            <p>Select an option from the menu to get started.</p>
+
+
+
+            <?php
+            include_once './MVC/Views/Pages/' . $data['page'] . '.php';
+            ?>
         </main>
     </div>
 
@@ -47,6 +59,26 @@
     <footer class="footer">
         <p>&copy; 2024 Student Management System. All rights reserved.</p>
     </footer>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Xác nhận đăng xuất</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn đăng xuất không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <a href="http://localhost/project_quanlisinhvien/LoginController/logout" class="btn btn-primary">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 
 </html>
