@@ -5,16 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="Public/Css/Home.css">
+    <link rel="stylesheet" href="http://localhost/project_quanlisinhvien/Public/Css/Home.css">
     <link rel="stylesheet" href="http://localhost/project_quanlisinhvien/Public/Css/bootstrap.min.css">
-    <script src="http://localhost/project_quanlisinhvien/Public/Js/jquery-3.3.1.slim.min.js"></script>
     <script src="http://localhost/project_quanlisinhvien/Public/Js/popper.min.js"></script>
-    <script src="http://localhost/project_quanlisinhvien/Public/Js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
+    <script src="http://localhost/project_quanlisinhvien/Public/Js/jquery-3.3.1.slim.min.js"></script>
+    <script src="Public/Js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -23,10 +18,9 @@
         <div class="logo">Student Management</div>
         <nav class="nav">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="http://localhost/project_quanlisinhvien">Home</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
-
             </ul>
         </nav>
     </header>
@@ -37,7 +31,7 @@
         <aside class="sidebar">
             <ul>
                 <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Manage Students</a></li>
+                <li><a href="http://localhost/project_quanlisinhvien/manage_students">Manage Students</a></li>
                 <li><a href="#">Manage Courses</a></li>
                 <li><a href="#">View Grades</a></li>
                 <li><a href="#">Financial Info</a></li>
@@ -46,11 +40,11 @@
 
         <!-- Main Content -->
         <main class="main-content">
-
-
-
             <?php
-            include_once './MVC/Views/Pages/' . $data['page'] . '.php';
+            // Safely include the dynamic page content
+            if (isset($data['page'])) {
+                include_once './MVC/Views/Pages/' . basename($data['page']) . '.php';
+            }
             ?>
         </main>
     </div>
@@ -60,6 +54,7 @@
         <p>&copy; 2024 Student Management System. All rights reserved.</p>
     </footer>
 
+    <!-- Modal -->
     <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -79,6 +74,5 @@
     </div>
 
 </body>
-
 
 </html>
