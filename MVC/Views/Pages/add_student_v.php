@@ -7,56 +7,99 @@
                         <h3>Add New Student</h3>
                     </div>
                     <div class="card-body">
-                        <form action="process_add_student.php" method="POST">
-                            <!-- Row 1: Student ID and Full Name -->
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="studentId" class="form-label">Student ID</label>
-                                    <input type="text" class="form-control" id="studentId" name="student_id" placeholder="Enter Student ID" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="studentName" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="studentName" name="name" placeholder="Enter Full Name" required>
-                                </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="studentId" class="form-label">Student ID</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="studentId"
+                                    name="student_id"
+                                    placeholder="Enter Student ID"
+                                    value="<?php echo isset($data['oldData']['student_id']) ? $data['oldData']['student_id'] : ''; ?>"
+                                    required>
                             </div>
-                            <!-- Row 2: Date of Birth and Gender -->
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="studentDob" class="form-label">Date of Birth</label>
-                                    <input type="date" class="form-control" id="studentDob" name="dob" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="studentGender" class="form-label">Gender</label>
-                                    <select class="form-select" id="studentGender" name="gender" required>
-                                        <option value="" disabled selected>Select Gender</option>
-                                        <option value="Nam">Nam</option>
-                                        <option value="Nu">Nu</option>
-                                        <option value="Khac">Khac</option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6">
+                                <label for="studentName" class="form-label">Full Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="studentName"
+                                    name="name"
+                                    placeholder="Enter Full Name"
+                                    value="<?php echo isset($data['oldData']['name']) ? $data['oldData']['name'] : ''; ?>"
+                                    required>
                             </div>
-                            <!-- Row 3: Email and Phone -->
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="studentEmail" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="studentEmail" name="email" placeholder="Enter Email" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="studentPhone" class="form-label">Phone</label>
-                                    <input type="text" class="form-control" id="studentPhone" name="phone" placeholder="Enter Phone Number" required>
-                                </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="studentDob" class="form-label">Date of Birth</label>
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="studentDob"
+                                    name="dob"
+                                    value="<?php echo isset($data['oldData']['dob']) ? $data['oldData']['dob'] : ''; ?>"
+                                    required>
                             </div>
-                            <!-- Row 4: Address (Quê quán) -->
-                            <div class="mb-3">
-                                <label for="studentAddress" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="studentAddress" name="address" placeholder="Enter Address" required>
+                            <div class="col-md-6">
+                                <label for="studentGender" class="form-label">Gender</label>
+                                <select class="form-select" id="studentGender" name="gender" required>
+                                    <option value="" disabled>Select Gender</option>
+                                    <option value="Nam" <?php echo (isset($data['oldData']['gender']) && $data['oldData']['gender'] == 'Nam') ? 'selected' : ''; ?>>Nam</option>
+                                    <option value="Nu" <?php echo (isset($data['oldData']['gender']) && $data['oldData']['gender'] == 'Nu') ? 'selected' : ''; ?>>Nu</option>
+                                    <option value="Khac" <?php echo (isset($data['oldData']['gender']) && $data['oldData']['gender'] == 'Khac') ? 'selected' : ''; ?>>Khác</option>
+                                </select>
                             </div>
-                            <!-- Buttons -->
-                            <div class="text-center mt-4">
-                                <button type="submit" class="btn btn-success px-4" name=btnthem>Add Student</button>
-                                <a href="index.php" class="btn btn-outline-secondary px-4">Back to List</a>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="studentEmail" class="form-label">Email</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="studentEmail"
+                                    name="email"
+                                    placeholder="Enter Email"
+                                    value="<?php echo isset($data['oldData']['email']) ? $data['oldData']['email'] : ''; ?>"
+                                    required>
                             </div>
-                        </form>
+                            <div class="col-md-6">
+                                <label for="studentPhone" class="form-label">Phone</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="studentPhone"
+                                    name="phone"
+                                    placeholder="Enter Phone Number"
+                                    value="<?php echo isset($data['oldData']['phone']) ? $data['oldData']['phone'] : ''; ?>"
+                                    required>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="studentAddress" class="form-label">Address</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="studentAddress"
+                                name="address"
+                                placeholder="Enter Address"
+                                value="<?php echo isset($data['oldData']['address']) ? $data['oldData']['address'] : ''; ?>"
+                                required>
+                        </div>
+
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-success px-4" name="btnthem">Add Student</button>
+                            <a href="http://localhost/project_quanlisinhvien/manage_students/Get_data" class="btn btn-outline-secondary px-4">Back to List</a>
+                        </div>
                     </div>
                 </div>
             </div>
