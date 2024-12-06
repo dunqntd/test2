@@ -10,6 +10,8 @@
     <script src="http://localhost/project_quanlisinhvien/Public/Js/popper.min.js"></script>
     <script src="http://localhost/project_quanlisinhvien/Public/Js/jquery-3.3.1.slim.min.js"></script>
     <script src="Public/Js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -18,30 +20,62 @@
         <div class="logo">Student Management</div>
         <nav class="nav">
             <ul>
-                <li><a href="http://localhost/project_quanlisinhvien">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
+                <li><a href="http://localhost/project_quanlisinhvien">Trang chủ</a></li>
+                <li><a href="#">Hồ Sơ</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Đăng xuất</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Layout Container -->
-    <div class="layout">
+    <div class="layout d-flex">
         <!-- Sidebar -->
-        <aside class="sidebar">
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="http://localhost/project_quanlisinhvien/manage_students">Manage Students</a></li>
-                <li><a href="#">Manage Courses</a></li>
-                <li><a href="#">View Grades</a></li>
-                <li><a href="#">Financial Info</a></li>
+        <aside class="bg-dark p-3 text-white" style="width: 250px; height: 100vh; position: fixed;">
+            <h5 class="text-light mb-4">Quản Lý</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a href="http://localhost/project_quanlisinhvien/manage_students" class="nav-link text-white">
+                        <i class="bi bi-people"></i> Quản Lí Sinh Viên
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#courseManagement" aria-expanded="false">
+                        <i class="bi bi-book"></i> Quản Lí Khóa Học
+                    </a>
+                    <ul id="courseManagement" class="collapse nav flex-column ms-3 mt-2">
+                        <li class="nav-item">
+                            <a href="http://localhost/project_quanlisinhvien/manage_courses" class="nav-link text-white">
+                                <i class="bi bi-list"></i> Danh Sách Khóa Học
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://localhost/project_quanlisinhvien/registration/Get_data" class="nav-link text-white">
+                                <i class="bi bi-clipboard"></i> Quản Lí Đăng Kí
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-journal-text"></i> Quản Lí Học Tập
+                    </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-cash"></i> Quản Lí Học Phí
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white">
+                        <i class="bi bi-person-circle"></i> Quản Lí Tài Khoản
+                    </a>
+                </li>
             </ul>
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content p-4" style="margin-left: 250px; width: calc(100% - 250px); padding-bottom: 70px;">
             <?php
-            // Safely include the dynamic page content
             if (isset($data['page'])) {
                 include_once './MVC/Views/Pages/' . basename($data['page']) . '.php';
             }
@@ -50,8 +84,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Student Management System. All rights reserved.</p>
+    <footer class="footer  text-white text-center py-3 mt-auto" style="position: fixed; bottom: 0; left: 0; width: 100%;">
+        <p class="mb-0">&copy; 2024 Student Management System. All rights reserved.</p>
     </footer>
 
     <!-- Modal -->
@@ -72,7 +106,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

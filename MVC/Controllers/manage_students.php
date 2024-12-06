@@ -19,6 +19,16 @@ class Manage_students extends Controller
             'danhsachsinhvien' => $danhSachSinhVien
         ]);
     }
+
+    public function addstudent()
+    {
+
+        $this->view('Masterlayout', [
+            'page' => 'add_student_v',
+
+        ]);
+    }
+
     public function timkiem()
     {
         if (isset($_POST['btnTimkiem'])) {
@@ -37,17 +47,10 @@ class Manage_students extends Controller
             ]);
             exit;
         }
-        if (isset($_POST['btnXuatExcel'])) {
+        if (isset($_POST['btndkmon'])) {
         }
     }
-    public function addstudent()
-    {
 
-        $this->view('Masterlayout', [
-            'page' => 'add_student_v',
-
-        ]);
-    }
     public function themmoi()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnthem'])) {

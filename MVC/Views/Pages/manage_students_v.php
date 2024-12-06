@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Students</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body>
     <form method="post" action="http://localhost/project_quanlisinhvien/manage_students/Timkiem">
 
         <div class="container mt-4">
-            <h2 class="mb-4">Manage Students</h2>
+            <h2 class="mb-4">Quản lí sinh viên</h2>
             <!-- Table for displaying students -->
 
             <div class="form-inline">
@@ -24,23 +23,23 @@
                 <input type="text" class="form-control1" id="myname" placeholder="" name="txtname" value="<?php if (isset($data['name'])) echo $data['name'] ?>">
 
                 <button style="margin-left: 1cm; background-color: #26a69a;" type="submit" class="btn btn-primary" name="btnTimkiem">Tìm Kiếm</button>
-                <button type="submit" class="btn btn-success" name="btnXuatExcel" style="margin-left: 230px;">
+                <!-- <button type="submit" class="btn btn-success" name="btnXuatExcel" style="margin-left: 230px;">
                     Xuất Excel
-                </button>
+                </button> -->
             </div>
             <br>
-            <table class="table table-bordered table-striped">
-                <thead>
+            <table class="table table-hover table-bordered table-striped align-middle ">
+                <thead class="table">
                     <tr>
                         <th>#</th>
                         <th>Mã sinh viên</th>
-                        <th>Name</th>
+                        <th>Tên</th>
                         <th>Ngày Sinh</th>
                         <th>Giới Tính</th>
                         <th>Quê Quán</th>
                         <th>Email</th>
                         <th>Điện thoại</th>
-                        <th>Actions</th>
+                        <th>Hành động</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,9 +58,8 @@
                                 <td><?php echo $row['Email']; ?></td>
                                 <td><?php echo $row['SoDienThoai']; ?></td>
                                 <td>
-                                    <!-- Edit Button -->
                                     <a href="#"
-                                        class="edit-link btn btn-primary btn-sm"
+                                        class="edit-link btn btn-sm btn-primary"
                                         data-id="<?php echo $row['MaSoSV']; ?>"
                                         data-name="<?php echo $row['HoTen']; ?>"
                                         data-email="<?php echo $row['Email']; ?>"
@@ -70,9 +68,12 @@
                                         data-dob="<?php echo $row['NgaySinh']; ?>"
                                         data-gender="<?php echo $row['GioiTinh']; ?>"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#editModal">Edit</a>
-                                    <!-- Delete Button -->
-                                    <a href="http://localhost/project_quanlisinhvien/manage_students/delete_student/<?php echo $row['MaSoSV']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                        data-bs-target="#editModal">Sửa</a>
+                                    <a href="http://localhost/project_quanlisinhvien/manage_students/delete_student/<?php echo $row['MaSoSV']; ?>"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Bạn có chắc chắn muốn xóa sinh viên này?')">Xóa</a>
+                                    <a href="http://localhost/project_quanlisinhvien/registration/viewRegisteredCourses/<?php echo $row['MaSoSV']; ?>"
+                                        class="btn btn-sm btn-info">Môn học</a>
                                 </td>
                             </tr>
                         <?php
@@ -80,14 +81,14 @@
                     } else {
                         ?>
                         <tr>
-                            <td colspan="9" class="text-center">No students found</td>
+                            <td colspan="9" class="text-center text-danger">Không tìm thấy sinh viên nào</td>
                         </tr>
                     <?php
                     }
                     ?>
                 </tbody>
             </table>
-            <a href="http://localhost/project_quanlisinhvien/manage_students/addstudent" class="btn btn-success">Add New Student</a>
+            <a href="http://localhost/project_quanlisinhvien/manage_students/addstudent" class="btn btn-success">Thêm Sinh Viên</a>
         </div>
     </form>
     <!-- Modal for edit student -->
