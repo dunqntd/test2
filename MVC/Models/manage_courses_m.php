@@ -1,8 +1,6 @@
 <?php
-
 class manage_courses_m extends connectDB
 {
-
     public function get_all_courses()
     {
         $sql = "SELECT * FROM MonHoc";

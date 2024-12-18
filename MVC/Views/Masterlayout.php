@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="http://localhost/project_quanlisinhvien/Public/Css/bootstrap.min.css">
     <script src="http://localhost/project_quanlisinhvien/Public/Js/popper.min.js"></script>
     <script src="http://localhost/project_quanlisinhvien/Public/Js/jquery-3.3.1.slim.min.js"></script>
-    <script src="Public/Js/bootstrap.min.js"></script>
+    <script src="http://localhost/project_quanlisinhvien/Public/Js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <!-- Layout Container -->
     <div class="layout d-flex">
         <!-- Sidebar -->
-        <aside class="bg-dark p-3 text-white" style="width: 250px; height: 100vh; position: fixed;">
+        <aside class=" p-3 text-white" style="width: 250px; height: 100vh; position: fixed;background-color:#243d55">
             <h5 class="text-light mb-4">Quản Lý</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2">
@@ -56,9 +56,23 @@
                     </ul>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-white">
-                        <i class="bi bi-journal-text"></i> Quản Lí Học Tập
+                    <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#Management2" aria-expanded="false">
+                        <i class="bi bi-book"></i> Quản Lí Học Tập
                     </a>
+                    <ul id="Management2" class="collapse nav flex-column ms-3 mt-2">
+                        <li class="nav-item">
+                            <a href="http://localhost/project_quanlisinhvien/result_student/" class="nav-link text-white">
+                                <i class="bi bi-list"></i> Xem kết quả
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://localhost/project_quanlisinhvien/result_student/view_enter_score/" class="nav-link text-white">
+                                <i class="bi bi-clipboard"></i> Nhập Điểm
+                            </a>
+                        </li>
+                    </ul>
+
+
                 </li>
                 <li class="nav-item mb-2">
                     <a href="#" class="nav-link text-white">

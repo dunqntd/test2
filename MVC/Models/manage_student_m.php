@@ -1,6 +1,5 @@
 <?php
 // Model: manage_student_m.php
-
 class manage_student_m extends connectDB
 {
 
