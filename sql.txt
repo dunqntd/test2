@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2024 at 05:20 PM
+-- Generation Time: Dec 25, 2024 at 07:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,6 +34,15 @@ CREATE TABLE `dangkymonhoc` (
   `NamHoc` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `dangkymonhoc`
+--
+
+INSERT INTO `dangkymonhoc` (`MaSoSV`, `MaMon`, `HocKy`, `NamHoc`) VALUES
+('sv001', 'CTDL', '1', '2024-2025'),
+('sv001', 'KT0X2', '1', '2024-2025'),
+('sv002', 'CTDL', '1', '2024-2025');
+
 -- --------------------------------------------------------
 
 --
@@ -46,8 +55,37 @@ CREATE TABLE `hocphi` (
   `HocKy` varchar(10) NOT NULL,
   `NamHoc` varchar(10) NOT NULL,
   `SoTien` decimal(10,2) NOT NULL,
-  `TrangThai` enum('Da thanh toan','Chua thanh toan') NOT NULL
+  `SoTienDaThanhToan` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `TrangThai` enum('Da thanh toan','Chua thanh toan','Mot phan thanh toan') NOT NULL DEFAULT 'Chua thanh toan'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `hocphi`
+--
+
+INSERT INTO `hocphi` (`MaSoSV`, `MaMon`, `HocKy`, `NamHoc`, `SoTien`, `SoTienDaThanhToan`, `TrangThai`) VALUES
+('sv001', 'CTDL', '1', '2024-2025', 12000.00, 8571.42, 'Da thanh toan'),
+('sv001', 'KT0X2', '1', '2024-2025', 16000.00, 11428.58, 'Da thanh toan'),
+('sv002', 'CTDL', '1', '2024-2025', 12000.00, 0.00, 'Chua thanh toan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hocphitc`
+--
+
+CREATE TABLE `hocphitc` (
+  `HocKy` varchar(10) NOT NULL,
+  `NamHoc` varchar(10) NOT NULL,
+  `GiaHocPhiMoiTinChi` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `hocphitc`
+--
+
+INSERT INTO `hocphitc` (`HocKy`, `NamHoc`, `GiaHocPhiMoiTinChi`) VALUES
+('1', '2024-2025', 4000.00);
 
 -- --------------------------------------------------------
 
@@ -63,6 +101,13 @@ CREATE TABLE `ketquahoctap` (
   `Diem` float(3,2) DEFAULT NULL CHECK (`Diem` >= 0 and `Diem` <= 10),
   `TrangThai` enum('Pass','Fail') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `ketquahoctap`
+--
+
+INSERT INTO `ketquahoctap` (`MaSoSV`, `MaMon`, `HocKy`, `NamHoc`, `Diem`, `TrangThai`) VALUES
+('sv001', 'CTDL', '1', '2024-2025', 9.00, '');
 
 -- --------------------------------------------------------
 
@@ -113,6 +158,21 @@ INSERT INTO `sinhvien` (`MaSoSV`, `HoTen`, `NgaySinh`, `GioiTinh`, `QueQuan`, `E
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `thanh_toan`
+--
+
+CREATE TABLE `thanh_toan` (
+  `MaSoSV` varchar(10) NOT NULL,
+  `MaMon` varchar(10) NOT NULL,
+  `HocKy` varchar(10) NOT NULL,
+  `NamHoc` varchar(10) NOT NULL,
+  `SoTienThanhToan` decimal(10,2) NOT NULL,
+  `NgayThanhToan` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -120,6 +180,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `role` tinyint(1) NOT NULL DEFAULT 0,
   `name` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -129,8 +190,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'ttuongdat@gmail.com', '123', 'Truong thanh dat', '2024-11-18 19:04:49', '2024-11-18 19:30:39');
+INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'ttuongdat@gmail.com', '123', 0, 'Truong thanh dat', '2024-11-18 19:04:49', '2024-11-18 19:30:39');
 
 --
 -- Indexes for dumped tables
@@ -149,6 +210,12 @@ ALTER TABLE `dangkymonhoc`
 ALTER TABLE `hocphi`
   ADD PRIMARY KEY (`MaSoSV`,`MaMon`,`HocKy`,`NamHoc`),
   ADD KEY `MaMon` (`MaMon`);
+
+--
+-- Indexes for table `hocphitc`
+--
+ALTER TABLE `hocphitc`
+  ADD PRIMARY KEY (`HocKy`,`NamHoc`);
 
 --
 -- Indexes for table `ketquahoctap`
@@ -172,6 +239,13 @@ ALTER TABLE `sinhvien`
   ADD UNIQUE KEY `SoDienThoai` (`SoDienThoai`);
 
 --
+-- Indexes for table `thanh_toan`
+--
+ALTER TABLE `thanh_toan`
+  ADD PRIMARY KEY (`MaSoSV`,`MaMon`,`HocKy`,`NamHoc`,`NgayThanhToan`),
+  ADD KEY `MaMon` (`MaMon`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -186,7 +260,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -212,6 +286,13 @@ ALTER TABLE `hocphi`
 ALTER TABLE `ketquahoctap`
   ADD CONSTRAINT `ketquahoctap_ibfk_1` FOREIGN KEY (`MaSoSV`) REFERENCES `sinhvien` (`MaSoSV`) ON DELETE CASCADE,
   ADD CONSTRAINT `ketquahoctap_ibfk_2` FOREIGN KEY (`MaMon`) REFERENCES `monhoc` (`MaMon`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `thanh_toan`
+--
+ALTER TABLE `thanh_toan`
+  ADD CONSTRAINT `thanh_toan_ibfk_1` FOREIGN KEY (`MaSoSV`) REFERENCES `sinhvien` (`MaSoSV`) ON DELETE CASCADE,
+  ADD CONSTRAINT `thanh_toan_ibfk_2` FOREIGN KEY (`MaMon`) REFERENCES `monhoc` (`MaMon`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

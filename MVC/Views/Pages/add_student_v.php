@@ -8,6 +8,7 @@
                     </div>
                     <div class="card-body">
 
+                        <!-- Các trường thông tin sinh viên -->
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="studentId" class="form-label">Mã Sinh Viên</label>
@@ -33,7 +34,7 @@
                             </div>
                         </div>
 
-
+                        <!-- Thông tin ngày sinh và giới tính -->
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="studentDob" class="form-label">Ngày Sinh</label>
@@ -56,7 +57,7 @@
                             </div>
                         </div>
 
-
+                        <!-- Thông tin email và điện thoại -->
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="studentEmail" class="form-label">Email</label>
@@ -75,30 +76,42 @@
                                     type="text"
                                     class="form-control"
                                     id="studentPhone"
-                                    name="Điện thoại"
+                                    name="phone"
                                     placeholder="Điện thoại"
                                     value="<?php echo isset($data['oldData']['phone']) ? $data['oldData']['phone'] : ''; ?>"
                                     required>
                             </div>
                         </div>
 
-
-                        <div class="mb-3">
-                            <label for="studentAddress" class="form-label">Quê Quán</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="studentAddress"
-                                name="address"
-                                placeholder="Quê Quán"
-                                value="<?php echo isset($data['oldData']['address']) ? $data['oldData']['address'] : ''; ?>"
-                                required>
+                        <!-- Thông tin mật khẩu và quê quán (cùng một hàng) -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="studentPassword" class="form-label">Mật Khẩu</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="studentPassword"
+                                    name="password"
+                                    placeholder="Mật khẩu"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="studentAddress" class="form-label">Quê Quán</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="studentAddress"
+                                    name="address"
+                                    placeholder="Quê Quán"
+                                    value="<?php echo isset($data['oldData']['address']) ? $data['oldData']['address'] : ''; ?>"
+                                    required>
+                            </div>
                         </div>
 
-
+                        <!-- Các nút submit và quay lại -->
                         <div class="text-center mt-4">
-                            <button type="submit" class="btn btn-success px-4" name="btnthem">Add Student</button>
-                            <a href="http://localhost/project_quanlisinhvien/manage_students/Get_data" class="btn btn-outline-secondary px-4">Back to List</a>
+                            <button type="submit" class="btn btn-success px-4" name="btnthem">Thêm Sinh Viên</button>
+                            <a href="http://localhost/project_quanlisinhvien/manage_students/Get_data" class="btn btn-outline-secondary px-4">Quay lại danh sách</a>
                         </div>
                     </div>
                 </div>

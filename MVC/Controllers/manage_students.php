@@ -54,6 +54,7 @@ class Manage_students extends Controller
     public function themmoi()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnthem'])) {
+            // Lấy dữ liệu từ form
             $masv = $_POST['student_id'];
             $ht = $_POST['name'];
             $ns = $_POST['dob'];
@@ -61,9 +62,12 @@ class Manage_students extends Controller
             $dt = $_POST['phone'];
             $email = $_POST['email'];
             $gt = $_POST['gender'];
+            $password = $_POST['password'];
+
+
 
             // Gọi hàm thêm mới sinh viên
-            $insertResult = $this->manage_student_model->sinhvien_ins($masv, $ht, $ns, $dc, $dt, $email, $gt);
+            $insertResult = $this->manage_student_model->sinhvien_ins($masv, $ht, $ns, $dc, $dt, $email, $gt, $password);
 
             // Kiểm tra kết quả trả về
             if ($insertResult === true) {
@@ -74,7 +78,6 @@ class Manage_students extends Controller
                 // Hiển thị lỗi và giữ lại dữ liệu người dùng
                 $this->view('Masterlayout', [
                     'page' => 'add_student_v',
-
                     'oldData' => [
                         'student_id' => $masv,
                         'name' => $ht,
