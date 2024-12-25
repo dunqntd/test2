@@ -57,7 +57,7 @@ class registration_m extends connectDB
         if (!$stmt->execute()) {
             die("Execute failed: " . $stmt->error);
         }
-
+        $this->registerCourseAndUpdateTuition($studentId, $courseId, $semester, $academicYear);
         $stmt->close();
 
         return true; // Đăng ký thành công
@@ -105,5 +105,56 @@ class registration_m extends connectDB
         $stmt->close();
 
         return $courses;
+    }
+
+
+    public function registerCourseAndUpdateTuition($studentId, $courseId, $semester, $academicYear)
+    {
+        // Bước 2: Lấy số tín chỉ của môn học từ bảng `monhoc`
+        $queryMonHoc = "SELECT SoTinChi FROM monhoc WHERE MaMon = ?";
+        $stmt = $this->con->prepare($queryMonHoc);
+        $stmt->bind_param("s", $courseId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $monHoc = $result->fetch_assoc();
+
+        if (!$monHoc) {
+            die("Môn học không tồn tại!");
+        }
+
+        var_dump($monHoc);  // Debug: Kiểm tra dữ liệu môn học
+
+        $SoTinChi = $monHoc['SoTinChi'];
+
+        // Bước 3: Lấy giá học phí mỗi tín chỉ từ bảng `hocphitc`
+        $queryHocPhi = "SELECT GiaHocPhiMoiTinChi FROM hocphitc WHERE HocKy = ? AND NamHoc = ?";
+        $stmt = $this->con->prepare($queryHocPhi);
+        $stmt->bind_param("ss", $semester, $academicYear);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $hocPhi = $result->fetch_assoc();
+
+        if (!$hocPhi) {
+            die("Không có thông tin học phí cho học kỳ và năm học này!");
+        }
+
+        var_dump($hocPhi);  // Debug: Kiểm tra dữ liệu học phí
+
+        $GiaHocPhiMoiTinChi = $hocPhi['GiaHocPhiMoiTinChi'];
+
+        // Bước 4: Tính học phí cho môn học
+        $SoTien = $SoTinChi * $GiaHocPhiMoiTinChi;
+
+        // Bước 5: Thêm thông tin học phí vào bảng `hocphi`
+        $queryHocPhiInsert = "INSERT INTO hocphi (MaSoSV, MaMon, HocKy, NamHoc, SoTien, SoTienDaThanhToan, TrangThai) 
+                              VALUES (?, ?, ?, ?, ?, 0.00, 'Chua thanh toan')";
+        $stmt = $this->con->prepare($queryHocPhiInsert);
+        $stmt->bind_param("sssss", $studentId, $courseId, $semester, $academicYear, $SoTien);
+
+        if (!$stmt->execute()) {
+            die("Lỗi khi cập nhật học phí! " . $stmt->error);
+        }
+
+        return "Đăng ký môn học và cập nhật học phí thành công!";
     }
 }

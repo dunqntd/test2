@@ -10,10 +10,10 @@ class Home extends controller
 
         ]);
     }
-    function hh()
+    function student_dashboard()
     {
         $this->view('Masterlayout_student', [
-            'page' => 'Home_v',
+            'page' => 'Home_student_v',
 
         ]);
     }

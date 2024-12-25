@@ -10,6 +10,8 @@
     <script src="http://localhost/project_quanlisinhvien/Public/Js/popper.min.js"></script>
     <script src="http://localhost/project_quanlisinhvien/Public/Js/jquery-3.3.1.slim.min.js"></script>
     <script src="http://localhost/project_quanlisinhvien/Public/Js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -18,9 +20,9 @@
         <div class="logo">Student Management</div>
         <nav class="nav">
             <ul>
-                <li><a href="http://localhost/project_quanlisinhvien/student_home">Trang chủ</a></li>
+                <li><a href="#">Trang chủ</a></li>
                 <li><a href="#">Hồ Sơ</a></li>
-                <li><a href="http://localhost/project_quanlisinhvien/LoginController/logout" data-bs-toggle="modal" data-bs-target="#logoutModal">Đăng xuất</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Đăng xuất</a></li>
             </ul>
         </nav>
     </header>
@@ -33,25 +35,25 @@
             <ul class="nav flex-column">
                 <!-- Đăng kí môn học -->
                 <li class="nav-item mb-2">
-                    <a href="http://localhost/project_quanlisinhvien/student_registration" class="nav-link text-white">
+                    <a href="#" class="nav-link text-white">
                         <i class="bi bi-pencil-square"></i> Đăng ký môn học
                     </a>
                 </li>
                 <!-- Kết quả học tập -->
                 <li class="nav-item mb-2">
-                    <a href="http://localhost/project_quanlisinhvien/student_results" class="nav-link text-white">
+                    <a href="#" class="nav-link text-white">
                         <i class="bi bi-clipboard"></i> Kết quả học tập
                     </a>
                 </li>
                 <!-- Môn học đã đăng ký -->
                 <li class="nav-item mb-2">
-                    <a href="http://localhost/project_quanlisinhvien/student_courses" class="nav-link text-white">
+                    <a href="#" class="nav-link text-white">
                         <i class="bi bi-book"></i> Môn học đã đăng ký
                     </a>
                 </li>
                 <!-- Học phí -->
                 <li class="nav-item mb-2">
-                    <a href="http://localhost/project_quanlisinhvien/student_fees" class="nav-link text-white">
+                    <a href="#" class="nav-link text-white">
                         <i class="bi bi-cash"></i> Học phí
                     </a>
                 </li>
@@ -92,6 +94,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

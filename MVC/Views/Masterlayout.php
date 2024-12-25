@@ -30,7 +30,7 @@
     <!-- Layout Container -->
     <div class="layout d-flex">
         <!-- Sidebar -->
-        <aside class=" p-3 text-white" style="width: 250px; height: 100vh; position: fixed;background-color:#243d55">
+        <aside class="p-3 text-white" style="width: 250px; height: 100vh; position: fixed; background-color:#243d55;">
             <h5 class="text-light mb-4">Quản Lý</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2">
@@ -71,21 +71,33 @@
                             </a>
                         </li>
                     </ul>
-
-
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-white">
-                        <i class="bi bi-cash"></i> Quản Lí Học Phí
+                    <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#Management3" aria-expanded="false">
+                        <i class="bi bi-book"></i> Quản Lí Học phí
                     </a>
+                    <ul id="Management3" class="collapse nav flex-column ms-3 mt-2">
+                        <li class="nav-item">
+                            <a href="http://localhost/project_quanlisinhvien/manage_tuition" class="nav-link text-white">
+                                <i class="bi bi-cash"></i> Thêm học phí
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://localhost/project_quanlisinhvien/payment_tuition" class="nav-link text-white">
+                                <i class="bi bi-cash"></i> Thanh Toán Học Phí
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link text-white">
                         <i class="bi bi-person-circle"></i> Quản Lí Tài Khoản
                     </a>
                 </li>
+
             </ul>
         </aside>
+
 
         <!-- Main Content -->
         <main class="main-content p-4" style="margin-left: 250px; width: calc(100% - 250px); padding-bottom: 70px;">

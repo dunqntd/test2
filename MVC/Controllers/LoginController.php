@@ -1,21 +1,17 @@
 <?php
 class LoginController extends Controller
 {
-
     private $loginModel;
 
     public function __construct()
     {
         $this->loginModel = $this->model('Login_m');
     }
+
     function Get_data()
     {
-        $this->view(
-            'Login_v',
-
-        );
+        $this->view('Login_v');
     }
-
 
     public function authenticate()
     {
@@ -26,13 +22,24 @@ class LoginController extends Controller
             $password = $_POST['password'];
 
             // Kiểm tra thông tin đăng nhập
-
             $user = $this->loginModel->checkLogin($email, $password);
 
             if ($user) {
                 // Đăng nhập thành công
                 $_SESSION['user'] = $user;
-                header('Location: http://localhost/project_quanlisinhvien/Home'); // Chuyển hướng đến trang chủ
+
+                // Phân quyền theo role
+                if ($user['role'] == 0) {
+                    // Quản trị viên
+                    header('Location: http://localhost/project_quanlisinhvien/admin_dashboard');
+                } elseif ($user['role'] == 1) {
+                    // Sinh viên
+                    header('Location: http://localhost/project_quanlisinhvien/Home/student_dashboard');
+                } else {
+                    // Vai trò không hợp lệ
+                    $error = "Tài khoản có vai trò không hợp lệ!";
+                    $this->view('login_v', ['error' => $error]);
+                }
             } else {
                 // Đăng nhập thất bại, hiển thị thông báo lỗi
                 $error = "Email hoặc mật khẩu không chính xác!";
@@ -41,11 +48,11 @@ class LoginController extends Controller
             }
         }
     }
+
     public function logout()
     {
-        $this->view(
-            'Login_v',
-
-        );
+        // Xóa session và chuyển hướng về trang đăng nhập
+        session_destroy();
+        header('Location: http://localhost/project_quanlisinhvien/LoginController');
     }
 }

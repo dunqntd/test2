@@ -33,19 +33,19 @@
         <!-- Điểm và thông tin khác -->
         <div class="mb-3">
             <label for="Diem">Điểm</label>
-            <input type="number" id="Diem" name="Diem" step="0.01" min="0" max="10" class="form-control" required placeholder="0-10">
+            <input type="number" id="Diem" name="Diem" step="0.01" min="0" max="10" class="form-control" required placeholder="">
         </div>
         <div class="mb-3">
             <label for="HocKy">Học kỳ</label>
             <select id="HocKy" name="HocKy" class="form-select" required>
-                <option value="" disabled selected>-- Chọn học kỳ --</option>
+                <option value="" disabled selected></option>
                 <option value="1">Học kỳ 1</option>
                 <option value="2">Học kỳ 2</option>
             </select>
         </div>
         <div class="mb-3">
             <label for="NamHoc">Năm học</label>
-            <input type="text" id="NamHoc" name="NamHoc" class="form-control" placeholder="Nhập năm học" required>
+            <input type="text" id="NamHoc" name="NamHoc" class="form-control" placeholder="" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Lưu Điểm</button>

@@ -11,7 +11,7 @@
 <body>
     <!-- Header -->
     <header class=" p-3 ">
-        <h2>Danh Sách Học Sinh</h2>
+        <h2>Kết Quả Học Tập</h2>
     </header>
 
     <div class="container mt-4">
