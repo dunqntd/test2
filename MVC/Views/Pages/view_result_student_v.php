@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-5">
     <!-- Thông tin sinh viên -->
     <?php if (isset($data['student_info']) && mysqli_num_rows($data['student_info']) > 0) {
         // Lấy dữ liệu thông tin sinh viên

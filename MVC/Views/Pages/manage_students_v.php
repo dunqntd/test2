@@ -11,7 +11,7 @@
 <body>
     <form method="post" action="http://localhost/project_quanlisinhvien/manage_students/Timkiem">
 
-        <div class="container mt-4">
+        <div class="container mt-6">
             <h2 class="mb-4">Quản lí sinh viên</h2>
             <!-- Table for displaying students -->
 

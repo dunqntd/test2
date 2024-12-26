@@ -10,11 +10,11 @@
 
 <body>
     <!-- Header -->
-    <header class=" p-3 ">
+    <header class=" p-2 ">
         <h2>Kết Quả Học Tập</h2>
     </header>
 
-    <div class="container mt-4">
+    <div class="container mt-6">
         <!-- Danh sách học sinh -->
         <table class="table table-hover table-bordered table-striped align-middle">
             <thead class="table">

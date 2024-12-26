@@ -90,7 +90,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-white">
+                    <a href="http://localhost/project_quanlisinhvien/manage_accounts/" class="nav-link text-white">
                         <i class="bi bi-person-circle"></i> Quản Lí Tài Khoản
                     </a>
                 </li>

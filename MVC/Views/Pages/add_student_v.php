@@ -85,16 +85,7 @@
 
                         <!-- Thông tin mật khẩu và quê quán (cùng một hàng) -->
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="studentPassword" class="form-label">Mật Khẩu</label>
-                                <input
-                                    type="password"
-                                    class="form-control"
-                                    id="studentPassword"
-                                    name="password"
-                                    placeholder="Mật khẩu"
-                                    required>
-                            </div>
+
                             <div class="col-md-6">
                                 <label for="studentAddress" class="form-label">Quê Quán</label>
                                 <input
@@ -104,6 +95,16 @@
                                     name="address"
                                     placeholder="Quê Quán"
                                     value="<?php echo isset($data['oldData']['address']) ? $data['oldData']['address'] : ''; ?>"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="studentPassword" class="form-label">Mật Khẩu</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="studentPassword"
+                                    name="password"
+                                    placeholder="Mật khẩu"
                                     required>
                             </div>
                         </div>

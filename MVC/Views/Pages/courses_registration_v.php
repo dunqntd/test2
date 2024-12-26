@@ -1,4 +1,4 @@
-<div class="container my-4">
+<div class="container my-6">
     <h2>Đăng ký môn học cho sinh viên</h2>
     <form action="http://localhost/project_quanlisinhvien/registration/registerCoursesForStudent" method="POST">
         <!-- Chọn sinh viên -->
