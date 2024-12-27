@@ -23,4 +23,14 @@ class Login_m extends connectDB
 
         return false;
     }
+    public function getStudentByEmail($email)
+    {
+        $query = "SELECT MaSoSV, HoTen FROM sinhvien WHERE email = ?";
+        $stmt = $this->con->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_assoc(); // Trả về thông tin sinh viên
+    }
 }

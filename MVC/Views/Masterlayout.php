@@ -29,84 +29,86 @@
 
     <!-- Layout Container -->
     <div class="layout d-flex">
-        <!-- Sidebar -->
-        <aside class="p-3 text-white" style="width: 250px; height: 100vh; position: fixed; background-color:#243d55;">
-            <h5 class="text-light mb-4">Quản Lý</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2">
-                    <a href="http://localhost/project_quanlisinhvien/manage_students" class="nav-link text-white">
-                        <i class="bi bi-people"></i> Quản Lí Sinh Viên
-                    </a>
-                </li>
-                <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#courseManagement" aria-expanded="false">
-                        <i class="bi bi-book"></i> Quản Lí Khóa Học
-                    </a>
-                    <ul id="courseManagement" class="collapse nav flex-column ms-3 mt-2">
-                        <li class="nav-item">
-                            <a href="http://localhost/project_quanlisinhvien/manage_courses" class="nav-link text-white">
-                                <i class="bi bi-list"></i> Danh Sách Khóa Học
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="http://localhost/project_quanlisinhvien/registration/Get_data" class="nav-link text-white">
-                                <i class="bi bi-clipboard"></i> Quản Lí Đăng Kí
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#Management2" aria-expanded="false">
-                        <i class="bi bi-book"></i> Quản Lí Học Tập
-                    </a>
-                    <ul id="Management2" class="collapse nav flex-column ms-3 mt-2">
-                        <li class="nav-item">
-                            <a href="http://localhost/project_quanlisinhvien/result_student/" class="nav-link text-white">
-                                <i class="bi bi-list"></i> Xem kết quả
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="http://localhost/project_quanlisinhvien/result_student/view_enter_score/" class="nav-link text-white">
-                                <i class="bi bi-clipboard"></i> Nhập Điểm
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item mb-2">
-                    <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#Management3" aria-expanded="false">
-                        <i class="bi bi-book"></i> Quản Lí Học phí
-                    </a>
-                    <ul id="Management3" class="collapse nav flex-column ms-3 mt-2">
-                        <li class="nav-item">
-                            <a href="http://localhost/project_quanlisinhvien/manage_tuition" class="nav-link text-white">
-                                <i class="bi bi-cash"></i> Thêm học phí
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="http://localhost/project_quanlisinhvien/payment_tuition" class="nav-link text-white">
-                                <i class="bi bi-cash"></i> Thanh Toán Học Phí
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="http://localhost/project_quanlisinhvien/manage_accounts/" class="nav-link text-white">
-                        <i class="bi bi-person-circle"></i> Quản Lí Tài Khoản
-                    </a>
-                </li>
+        <div class="p-3 text-white" style="width: 250px; height: 100vh; position: fixed; background-color:#243d55;">
+            <!-- Sidebar -->
+            <aside>
+                <h5 class="text-light mb-4">Quản Lý</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="http://localhost/project_quanlisinhvien/manage_students" class="nav-link text-white">
+                            <i class="bi bi-people"></i> Quản Lí Sinh Viên
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#courseManagement" aria-expanded="false">
+                            <i class="bi bi-book"></i> Quản Lí Khóa Học
+                        </a>
+                        <ul id="courseManagement" class="collapse nav flex-column ms-3 mt-2">
+                            <li class="nav-item">
+                                <a href="http://localhost/project_quanlisinhvien/manage_courses" class="nav-link text-white">
+                                    <i class="bi bi-list"></i> Danh Sách Khóa Học
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="http://localhost/project_quanlisinhvien/registration/Get_data" class="nav-link text-white">
+                                    <i class="bi bi-clipboard"></i> Quản Lí Đăng Kí
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#Management2" aria-expanded="false">
+                            <i class="bi bi-book"></i> Quản Lí Học Tập
+                        </a>
+                        <ul id="Management2" class="collapse nav flex-column ms-3 mt-2">
+                            <li class="nav-item">
+                                <a href="http://localhost/project_quanlisinhvien/result_student/" class="nav-link text-white">
+                                    <i class="bi bi-list"></i> Xem kết quả
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="http://localhost/project_quanlisinhvien/result_student/view_enter_score/" class="nav-link text-white">
+                                    <i class="bi bi-clipboard"></i> Nhập Điểm
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#" class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#Management3" aria-expanded="false">
+                            <i class="bi bi-book"></i> Quản Lí Học phí
+                        </a>
+                        <ul id="Management3" class="collapse nav flex-column ms-3 mt-2">
+                            <li class="nav-item">
+                                <a href="http://localhost/project_quanlisinhvien/manage_tuition" class="nav-link text-white">
+                                    <i class="bi bi-cash"></i> Thêm học phí
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="http://localhost/project_quanlisinhvien/payment_tuition" class="nav-link text-white">
+                                    <i class="bi bi-cash"></i> Thanh Toán Học Phí
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost/project_quanlisinhvien/manage_accounts/" class="nav-link text-white">
+                            <i class="bi bi-person-circle"></i> Quản Lí Tài Khoản
+                        </a>
+                    </li>
 
-            </ul>
-        </aside>
-
-
-        <!-- Main Content -->
-        <main class="main-content p-4" style="margin-left: 250px; width: calc(100% - 250px); padding-bottom: 70px;">
-            <?php
-            if (isset($data['page'])) {
-                include_once './MVC/Views/Pages/' . basename($data['page']) . '.php';
-            }
-            ?>
-        </main>
+                </ul>
+            </aside>
+        </div>
+        <div class="main-content p-4" style="margin-left: 250px; width: calc(100% - 250px); padding-bottom: 70px;">
+            <!-- Main Content -->
+            <main>
+                <?php
+                if (isset($data['page'])) {
+                    include_once './MVC/Views/Pages/' . basename($data['page']) . '.php';
+                }
+                ?>
+            </main>
+        </div>
     </div>
 
     <!-- Footer -->

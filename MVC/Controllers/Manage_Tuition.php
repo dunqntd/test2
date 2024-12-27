@@ -1,5 +1,5 @@
 <?php
-class Manage_Tuition extends Controller
+class manage_Tuition extends Controller
 {
     private $tuitionModel;
 
@@ -48,10 +48,7 @@ class Manage_Tuition extends Controller
         exit;
     }
 
-    // Hiển thị trang chỉnh sửa học phí
 
-
-    // Xử lý chỉnh sửa học phí
     public function update_Tuition()
     {
         // Kiểm tra dữ liệu từ form

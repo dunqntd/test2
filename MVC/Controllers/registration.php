@@ -68,4 +68,38 @@ class registration extends Controller
             'registeredCourses' => $registeredCourses,
         ]);
     }
+    public function updateCourse()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $studentId = $_POST['student_id'];
+            $courseId = $_POST['course_id'];
+            $semester = $_POST['semester'];
+            $academicYear = $_POST['academic_year'];
+
+            // Cập nhật môn học
+            $updateResult = $this->reg->updateCourse($courseId, $semester, $academicYear);
+
+            if ($updateResult) {
+                echo '<script>alert("Sửa môn học thành công!");</script>';
+                echo '<script>alert("Sửa môn học thành công!");</script>';
+                echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/registration/viewRegisteredCourses/" + "' . $studentId . '";</script>';
+            } else {
+                echo '<script>alert("Có lỗi xảy ra khi sửa môn học. Vui lòng thử lại.");</script>';
+            }
+        }
+    }
+
+    // Hàm xóa môn học
+    public function deleteCourse($courseId, $studentId)
+    {
+        // Gọi phương thức xóa trong model
+        $result = $this->reg->deleteCourseForStudent($courseId, $studentId);
+
+        if ($result) {
+            echo '<script>alert("Xóa môn học thành công!");</script>';
+            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/registration/viewRegisteredCourses/' . $studentId . '";</script>';
+        } else {
+            echo '<script>alert("Có lỗi xảy ra khi xóa môn học.");</script>';
+        }
+    }
 }

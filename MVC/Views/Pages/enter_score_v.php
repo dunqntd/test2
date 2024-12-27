@@ -1,5 +1,5 @@
 <!-- enter_score_v.php - View -->
-<div class="container mt-4">
+<div class="container mt-6">
     <h3>Nhập Điểm Sinh Viên</h3>
     <form action="http://localhost/project_quanlisinhvien/result_student/save_result" method="POST">
         <!-- Chọn sinh viên -->

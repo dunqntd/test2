@@ -107,6 +107,31 @@ class registration_m extends connectDB
         return $courses;
     }
 
+    public function updateCourse($courseId, $semester, $academicYear)
+    {
+        $sql = "UPDATE dangkymonhoc SET HocKy = '$semester', NamHoc = '$academicYear' WHERE MaMon = '$courseId'";
+        return mysqli_query($this->con, $sql);
+    }
+
+    public function deleteCourseForStudent($courseId, $studentId)
+    {
+        // Xóa dữ liệu từ bảng 'dangkymonhoc'
+        $sql1 = "DELETE FROM dangkymonhoc WHERE MaMon = ? AND MaSoSV = ?";
+        $stmt1 = $this->con->prepare($sql1);
+        $stmt1->bind_param("ss", $courseId, $studentId);
+        $result1 = $stmt1->execute();
+
+        // Xóa dữ liệu từ bảng 'hocphi'
+        $sql2 = "DELETE FROM hocphi WHERE MaMon = ? AND MaSoSV = ?";
+        $stmt2 = $this->con->prepare($sql2);
+        $stmt2->bind_param("ss", $courseId, $studentId);
+        $result2 = $stmt2->execute();
+
+        // Kiểm tra kết quả xóa
+        return $result1 && $result2;
+    }
+
+
 
     public function registerCourseAndUpdateTuition($studentId, $courseId, $semester, $academicYear)
     {

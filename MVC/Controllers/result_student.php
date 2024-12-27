@@ -94,7 +94,7 @@
 
         function view_result($id)
         {
-
+            // Lấy thông tin sinh viên theo mã sinh viên
             $studentInfo = $this->rs->get_student_by_id($id);
 
             // Kiểm tra nếu sinh viên không tồn tại
@@ -106,11 +106,28 @@
             // Lấy kết quả học tập của sinh viên
             $studentResults = $this->rs->get_student_results($id);
 
+            // Chuyển mysqli_result thành mảng
+            $resultsArray = [];
+            while ($row = mysqli_fetch_assoc($studentResults)) {
+                $resultsArray[] = $row;
+            }
+
+            // Tính điểm trung bình
+            $totalScore = 0;
+            $totalCredits = 0;
+            foreach ($resultsArray as $result) {
+                $totalScore += $result['Diem'] * $result['SoTinChi'];
+                $totalCredits += $result['SoTinChi'];
+            }
+
+            $averageScore = $totalCredits > 0 ? $totalScore / $totalCredits : 0;
+
             // Gửi dữ liệu tới View
             $this->view('Masterlayout', [
                 'page' => 'view_result_student_v',
-                'student_results' => $studentResults,
-                'student_info' => $studentInfo
+                'student_results' => $resultsArray, // Gửi mảng dữ liệu kết quả học tập
+                'student_info' => $studentInfo,
+                'average_score' => number_format($averageScore, 2) // Gửi điểm trung bình vào view
             ]);
         }
     }

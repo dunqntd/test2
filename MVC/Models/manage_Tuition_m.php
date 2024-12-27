@@ -44,15 +44,50 @@ class manage_Tuition_m extends connectDB
     // Cập nhật học phí
     public function updateTuition($HocKy, $NamHoc, $GiaHocPhiMoiTinChi)
     {
+        // Cập nhật giá học phí mỗi tín chỉ trong bảng hocphitc
         $sql = "UPDATE hocphitc SET GiaHocPhiMoiTinChi = ? WHERE HocKy = ? AND NamHoc = ?";
         $stmt = $this->con->prepare($sql);
         $stmt->bind_param("dss", $GiaHocPhiMoiTinChi, $HocKy, $NamHoc);
-
-        // Thực thi câu lệnh
         $result = $stmt->execute();
 
-        return $result ? "Cập nhật học phí thành công!" : "Cập nhật học phí thất bại!";
+        // Nếu việc cập nhật giá học phí thành công, tiếp tục cập nhật học phí cho sinh viên
+        if ($result) {
+            // Lấy danh sách sinh viên đã đăng ký môn học trong học kỳ và năm học đó
+            $sql_students = "SELECT DISTINCT MaSoSV FROM dangkymonhoc WHERE HocKy = ? AND NamHoc = ?";
+            $stmt = $this->con->prepare($sql_students);
+            $stmt->bind_param("ss", $HocKy, $NamHoc);
+            $stmt->execute();
+            $studentsResult = $stmt->get_result();
+
+            // Lặp qua các sinh viên đã đăng ký và tính toán lại học phí
+            while ($student = $studentsResult->fetch_assoc()) {
+                // Lấy tổng số tín chỉ mà sinh viên đã đăng ký trong học kỳ và năm học đó
+                $sql = "SELECT SUM(m.SoTinChi) AS TotalCredits FROM dangkymonhoc d 
+                    JOIN monhoc m ON d.MaMon = m.MaMon 
+                    WHERE d.MaSoSV = ? AND d.HocKy = ? AND d.NamHoc = ?";
+                $stmt = $this->con->prepare($sql);
+                $stmt->bind_param("sss", $student['MaSoSV'], $HocKy, $NamHoc);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $data = $result->fetch_assoc();
+
+                // Tính lại học phí cho sinh viên
+                $totalCredits = $data['TotalCredits'] ?? 0;
+                $newTuitionFee = $totalCredits * $GiaHocPhiMoiTinChi;
+
+                // Cập nhật học phí cho sinh viên trong bảng hocphi
+                $sql_update_fee = "UPDATE hocphi SET SoTien = ? WHERE MaSoSV = ? AND HocKy = ? AND NamHoc = ?";
+                $stmt = $this->con->prepare($sql_update_fee);
+                $stmt->bind_param("dsss", $newTuitionFee, $student['MaSoSV'], $HocKy, $NamHoc);
+                $stmt->execute();
+            }
+
+            return "Cập nhật học phí thành công!";
+        } else {
+            return "Cập nhật học phí thất bại!";
+        }
     }
+
 
 
     // Xóa học phí
