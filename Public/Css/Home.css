@@ -14,7 +14,6 @@ body {
 }
 
 /* Header */
-/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -22,27 +21,23 @@ body {
   background-color: #007bff;
   color: white;
   padding: 15px 20px;
-  width: 100%; /* Đảm bảo header chiếm toàn bộ chiều ngang */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tùy chọn: thêm bóng cho header */
-  z-index: 10; /* Đảm bảo header luôn trên các phần tử khác */
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .header .logo {
   font-size: 20px;
   font-weight: bold;
-  margin: 0; /* Reset mọi margin mặc định */
+  margin: 0;
 }
 
 .nav ul {
   list-style: none;
   display: flex;
   gap: 15px;
-  margin: 0; /* Reset margin của ul */
-  padding: 0; /* Reset padding của ul */
-}
-
-.nav ul li {
-  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav ul li a {
@@ -55,7 +50,7 @@ body {
 
 .nav ul li a:hover {
   text-decoration: none;
-  background-color: #0056b3; /* Thay đổi màu nền khi hover */
+  background-color: #0056b3;
   border-radius: 4px;
 }
 
@@ -104,17 +99,78 @@ body {
 
 /* Footer */
 .footer {
-  width: 100%; /* Đảm bảo footer chiếm toàn bộ chiều ngang */
+  width: 100%;
   background-color: #007bff;
   color: white;
   text-align: center;
   padding: 15px 20px;
-  position: relative; /* Đảm bảo footer nằm dưới cùng khi nội dung dài */
-  /* bottom: 0;
-  left: 0; */
-  z-index: 10; /* Đảm bảo footer không bị che bởi phần tử khác */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng cho footer (tùy chọn) */
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .footer p {
-  margin: 0; /* Reset mọi margin mặc định */
+  margin: 0;
+}
+
+/* Card styles */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card content */
+.card-body {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-img-top {
+  height: 150px;
+  object-fit: contain;
+}
+
+/* Button styles */
+.btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Layout for container and row */
+.container {
+  max-width: 1200px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.col-md-4 {
+  max-width: 31%;
+  margin-bottom: 20px;
 }

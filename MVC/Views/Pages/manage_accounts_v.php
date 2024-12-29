@@ -16,10 +16,12 @@
             </tr>
         </thead>
         <tbody>
-            <?php if (!empty($data['accounts'])): ?>
+            <?php if (!empty($data['accounts'])): $i = 0; ?>
+
                 <?php foreach ($data['accounts'] as $account): ?>
+
                     <tr>
-                        <td><?php echo $account['id']; ?></td>
+                        <td><?php echo (++$i); ?></td>
                         <td><?php echo $account['email']; ?></td>
                         <td><?php echo $account['password']; ?></td>
                         <td><?php echo $account['role'] == 0 ? 'Quản trị' : 'Sinh viên'; ?></td>
@@ -33,7 +35,7 @@
                                 onclick="setEditAccountData(<?php echo htmlspecialchars(json_encode($account), ENT_QUOTES, 'UTF-8'); ?>)">
                                 Sửa
                             </button>
-                            <a href="delete_account/<?php echo $account['id']; ?>"
+                            <a href="http://localhost/project_quanlisinhvien/manage_accounts/delete/<?php echo $account['id']; ?>"
                                 class="btn btn-danger btn-sm"
                                 onclick="return confirm('Bạn có chắc muốn xóa tài khoản này?')">Xóa</a>
                         </td>
@@ -63,7 +65,7 @@
                     <input type="hidden" id="editAccountId" name="id">
                     <div class="mb-3">
                         <label for="editAccountEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="editAccountEmail" name="email" required>
+                        <input type="email" class="form-control" id="editAccountEmail" name="email" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="editAccountPassword" class="form-label">Mật khẩu</label>

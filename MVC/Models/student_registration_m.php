@@ -36,4 +36,25 @@ class student_registration_m extends connectDB
 
         return true;
     }
+    public function get_student_by_id($student)
+    {
+        $sql = "SELECT * FROM sinhvien WHERE MaSoSV=?";
+        $stmt = $this->con->prepare($sql);
+        $stmt->bind_param("s", $student);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result;
+    }
+    public function get_registered_courses_by_student($student_id)
+    {
+        $sql = "SELECT mh.MaMon, mh.TenMon, mh.SoTinChi, dk.HocKy, dk.NamHoc
+            FROM dangkymonhoc dk
+            JOIN monhoc mh ON dk.MaMon = mh.MaMon
+            WHERE dk.MaSoSV = ?";
+        $stmt = $this->con->prepare($sql);
+        $stmt->bind_param("s", $student_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result;
+    }
 }

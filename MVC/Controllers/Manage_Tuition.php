@@ -8,10 +8,10 @@ class manage_Tuition extends Controller
         $this->tuitionModel = $this->model('manage_Tuition_m');  // Sử dụng model
     }
 
-    // Hiển thị danh sách học phí
+
     public function Get_data()
     {
-        // Lấy danh sách học phí từ model
+
         $tuitionData = $this->tuitionModel->getTuitionInformation();
 
         // Kiểm tra nếu dữ liệu không trống
