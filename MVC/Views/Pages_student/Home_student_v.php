@@ -1,8 +1,9 @@
 <body>
     <div class="container my-5">
+        <!-- Hàng đầu tiên -->
         <div class="row">
             <!-- Đăng ký môn học -->
-            <div class="col-md-4 mb-4">
+            <div class="col-md-5 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body text-center">
                         <i class="bi bi-book fs-1 mb-3"></i>
@@ -13,7 +14,7 @@
             </div>
 
             <!-- Kết quả học tập -->
-            <div class="col-md-4 mb-4">
+            <div class="col-md-5 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body text-center">
                         <i class="bi bi-person-check fs-1 mb-3"></i>
@@ -22,9 +23,12 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <!-- Hàng thứ hai -->
+        <div class="row">
             <!-- Môn học đã đăng ký -->
-            <div class="col-md-4 mb-4">
+            <div class="col-md-5 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body text-center">
                         <i class="bi bi-journal-text fs-1 mb-3"></i>
@@ -33,11 +37,9 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
             <!-- Học phí -->
-            <div class="col-md-4 mb-4">
+            <div class="col-md-5 mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body text-center">
                         <i class="bi bi-cash-coin fs-1 mb-3"></i>
@@ -46,21 +48,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Lịch sử giao dịch -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-check fs-1 mb-3"></i>
-                        <h5 class="card-title">Lịch Sử Giao Dịch</h5>
-                        <a href="#" class="btn btn-primary">Xem Lịch Sử</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-</html>

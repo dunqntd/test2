@@ -19,4 +19,10 @@ class profile_m extends connectDB
         // Trả về một sinh viên duy nhất (lấy 1 dòng kết quả)
         return $result->fetch_assoc();
     }
+    public function updateAvatar($maSoSV, $avatarFileName)
+    {
+        $sql = "UPDATE sinhvien SET Avatar = ? WHERE MaSoSV = ?";
+        $stmt = $this->con->prepare($sql);
+        $stmt->execute([$avatarFileName, $maSoSV]);
+    }
 }

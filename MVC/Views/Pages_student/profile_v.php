@@ -1,4 +1,23 @@
+<?php if (isset($_SESSION['message'])): ?>
+    <div class="alert alert-success">
+        <?php
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+        ?>
+    </div>
+<?php endif; ?>
+
+<?php if (isset($_SESSION['error'])): ?>
+    <div class="alert alert-danger">
+        <?php
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+        ?>
+    </div>
+<?php endif; ?>
 <div class="container mt-5">
+
+
     <!-- Thông tin sinh viên -->
     <h2 class="mb-5 text-center text-primary">Thông Tin Sinh Viên</h2>
 
@@ -9,10 +28,12 @@
             $avatar = isset($data['studentInfo']['Avatar']) ? $data['studentInfo']['Avatar'] : 'default-avatar.jpg';
             ?>
             <div class="avatar-container mb-4">
-                <img src="uploads/<?php echo $avatar; ?>" alt="Avatar" class="img-fluid rounded-circle avatar-img">
+                <img src="./Public/uploads/<?php echo $avatar; ?>" alt="Avatar" class="img-fluid rounded-circle avatar-img">
             </div>
+
+
             <!-- Form upload ảnh -->
-            <form action="upload_avatar.php" method="POST" enctype="multipart/form-data">
+            <form action="http://localhost/project_quanlisinhvien/profile/UploadAvatar" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="file" name="avatar" accept="image/*" class="form-control">
                 </div>
