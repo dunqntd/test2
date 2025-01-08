@@ -1,48 +1,80 @@
-<div class="container mt-6">
-    <h3>Nhập Điểm Sinh Viên</h3>
-    <form action="http://localhost/project_quanlisinhvien/result_student/save_result" method="POST">
-        <!-- Chọn sinh viên -->
-        <div class="mb-3">
-            <label for="student_id">Sinh viên</label>
-            <select class="form-control" id="student_id" name="student_id" required>
-                <option value="" disabled selected>-- Chọn sinh viên --</option>
-                <?php foreach ($data['students'] as $student): ?>
-                    <option value="<?php echo $student['MaSoSV']; ?>">
-                        <?php echo $student['HoTen']; ?> (ID: <?php echo $student['MaSoSV']; ?>)
-                    </option>
-                <?php endforeach; ?>
-            </select>
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h3 class="mb-0">Nhập Điểm Sinh Viên</h3>
         </div>
+        <div class="card-body">
+            <form action="http://localhost/project_quanlisinhvien/result_student/save_result" method="POST">
+                <!-- Chọn sinh viên -->
+                <div class="mb-4">
+                    <label for="student_id" class="form-label">Sinh viên</label>
+                    <select class="form-select" id="student_id" name="student_id" required>
+                        <option value="" disabled selected>-- Chọn sinh viên --</option>
+                        <?php foreach ($data['students'] as $student): ?>
+                            <option value="<?php echo $student['MaSoSV']; ?>">
+                                <?php echo $student['HoTen']; ?> (ID: <?php echo $student['MaSoSV']; ?>)
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
 
-        <!-- Chọn học kỳ -->
-        <div class="mb-3">
-            <label for="HocKy">Học kỳ</label>
-            <select id="HocKy" name="HocKy" class="form-select" required>
-                <option value="" disabled selected>-- Chọn học kì --</option>
-                <option value="1">Học kỳ 1</option>
-                <option value="2">Học kỳ 2</option>
-            </select>
+                <!-- Chọn học kỳ -->
+                <div class="mb-4">
+                    <label for="HocKy" class="form-label">Học kỳ</label>
+                    <select id="HocKy" name="HocKy" class="form-select" required>
+                        <option value="" disabled selected>-- Chọn học kì --</option>
+                        <option value="1">Học kỳ 1</option>
+                        <option value="2">Học kỳ 2</option>
+                    </select>
+                </div>
+
+                <!-- Danh sách môn học -->
+                <div class="mb-4">
+                    <label for="courses_id" class="form-label">Môn học</label>
+                    <select id="courses_id" name="courses_id" class="form-select" required>
+                        <option value="" disabled selected>-- Chọn môn học --</option>
+                    </select>
+                </div>
+
+                <!-- Nhập điểm -->
+                <div class="mb-4">
+                    <label for="Diem" class="form-label">Điểm</label>
+                    <input
+                        type="number"
+                        id="Diem"
+                        name="Diem"
+                        class="form-control"
+                        placeholder="Nhập điểm từ 0 đến 10"
+                        step="0.01"
+                        min="0"
+                        max="10"
+                        required>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success px-5">Lưu Điểm</button>
+                </div>
+            </form>
         </div>
+    </div>
 
-        <!-- Danh sách môn học -->
-        <div class="mb-3">
-            <label for="courses_id">Môn học</label>
-            <select id="courses_id" name="courses_id" class="form-select" required>
-                <option value="" disabled selected>-- Chọn môn học --</option>
-                <!-- Các môn học sẽ được tải từ AJAX -->
-            </select>
+    <div class="card mt-4 shadow-sm">
+        <div class="card-header bg-light">
+            <h5 class="mb-0 text-center">Nhập Điểm Bằng File</h5>
         </div>
-
-        <!-- Điểm -->
-        <div class="mb-3">
-            <label for="Diem">Điểm</label>
-            <input type="number" id="Diem" name="Diem" step="0.01" min="0" max="10" class="form-control" required placeholder="0">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data" action="http://localhost/project_quanlisinhvien/result_student/uploadfile">
+                <div class="row align-items-center">
+                    <div class="col-md-8 mb-3 mb-md-0">
+                        <input type="file" class="form-control" id="txtFile" name="txtFile" required>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary w-100" name="btnUpload">Tải Lên</button>
+                    </div>
+                </div>
+            </form>
         </div>
-
-
-
-        <button type="submit" class="btn btn-primary">Lưu Điểm</button>
-    </form>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

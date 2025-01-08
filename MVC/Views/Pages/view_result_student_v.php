@@ -65,7 +65,8 @@
                     <th>#</th>
                     <th>Mã môn</th>
                     <th>Tên môn học</th>
-                    <th>Số tín chỉ</th>
+                    <th>Học Kỳ</th>
+                    <th>Năm học</th>
                     <th>Điểm</th>
                     <th>Trạng thái</th>
                 </tr>
@@ -79,7 +80,8 @@
                         <td><?php echo $index++; ?></td>
                         <td><?php echo $result['MaMon']; ?></td>
                         <td><?php echo $result['TenMon']; ?></td>
-                        <td><?php echo $result['SoTinChi']; ?></td>
+                        <td><?php echo $result['HocKy']; ?></td>
+                        <td><?php echo $result['NamHoc']; ?></td>
                         <td><?php echo $result['Diem']; ?></td>
                         <td><?php echo ($result['Diem'] >= 5 ? 'Đạt' : 'Không Đạt'); ?></td>
                     </tr>

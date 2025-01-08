@@ -33,6 +33,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Mã môn</th>
                     <th>Tên môn</th>
                     <th>Học kỳ</th>
@@ -42,8 +43,12 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($data['results'] as $result): ?>
+
+                <?php
+                $index = 1;
+                foreach ($data['results'] as $result): ?>
                     <tr>
+                        <td><?php echo $index++; ?></td>
                         <td><?php echo $result['MaMon']; ?></td>
                         <td><?php echo $result['TenMon']; ?></td>
                         <td><?php echo $result['HocKy']; ?></td>

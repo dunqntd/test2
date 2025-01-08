@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 25, 2024 at 07:52 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th1 08, 2025 lúc 08:42 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `qlsinhvien`
+-- Cơ sở dữ liệu: `qlsinhvien`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dangkymonhoc`
+-- Cấu trúc bảng cho bảng `dangkymonhoc`
 --
 
 CREATE TABLE `dangkymonhoc` (
@@ -35,18 +35,29 @@ CREATE TABLE `dangkymonhoc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `dangkymonhoc`
+-- Đang đổ dữ liệu cho bảng `dangkymonhoc`
 --
 
 INSERT INTO `dangkymonhoc` (`MaSoSV`, `MaMon`, `HocKy`, `NamHoc`) VALUES
+('sv001', 'CNPM', '1', '2024-2025'),
 ('sv001', 'CTDL', '1', '2024-2025'),
-('sv001', 'KT0X2', '1', '2024-2025'),
-('sv002', 'CTDL', '1', '2024-2025');
+('sv001', 'KTXD', '1', '2024-2025'),
+('sv001', 'LTN', '2', '2024-2025'),
+('sv001', 'TMDT', '2', '2024-2025'),
+('sv002', 'CNPM', '1', '2024-2025'),
+('sv002', 'CTDL', '1', '2024-2025'),
+('sv002', 'LTN', '1', '2024-2025'),
+('sv002', 'TMDT', '1', '2024-2025'),
+('sv003', 'CNPM', '1', '2024-2025'),
+('sv003', 'CTDL', '1', '2024-2025'),
+('sv003', 'KTXD', '1', '2024-2025'),
+('sv003', 'LTN', '1', '2024-2025'),
+('sv003', 'TMDT', '1', '2024-2025');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hocphi`
+-- Cấu trúc bảng cho bảng `hocphi`
 --
 
 CREATE TABLE `hocphi` (
@@ -60,18 +71,29 @@ CREATE TABLE `hocphi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `hocphi`
+-- Đang đổ dữ liệu cho bảng `hocphi`
 --
 
 INSERT INTO `hocphi` (`MaSoSV`, `MaMon`, `HocKy`, `NamHoc`, `SoTien`, `SoTienDaThanhToan`, `TrangThai`) VALUES
-('sv001', 'CTDL', '1', '2024-2025', 12000.00, 8571.42, 'Da thanh toan'),
-('sv001', 'KT0X2', '1', '2024-2025', 16000.00, 11428.58, 'Da thanh toan'),
-('sv002', 'CTDL', '1', '2024-2025', 12000.00, 0.00, 'Chua thanh toan');
+('sv001', 'CNPM', '1', '2024-2025', 5000000.00, 0.00, 'Chua thanh toan'),
+('sv001', 'CTDL', '1', '2024-2025', 5000000.00, 0.00, 'Chua thanh toan'),
+('sv001', 'KTXD', '1', '2024-2025', 5000000.00, 0.00, 'Chua thanh toan'),
+('sv001', 'LTN', '2', '2024-2025', 3600000.00, 0.00, 'Chua thanh toan'),
+('sv001', 'TMDT', '2', '2024-2025', 3600000.00, 0.00, 'Chua thanh toan'),
+('sv002', 'CNPM', '1', '2024-2025', 6000000.00, 0.00, 'Chua thanh toan'),
+('sv002', 'CTDL', '1', '2024-2025', 6000000.00, 0.00, 'Chua thanh toan'),
+('sv002', 'LTN', '1', '2024-2025', 6000000.00, 0.00, 'Chua thanh toan'),
+('sv002', 'TMDT', '1', '2024-2025', 6000000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'CNPM', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'CTDL', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'KTXD', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'LTN', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'TMDT', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hocphitc`
+-- Cấu trúc bảng cho bảng `hocphitc`
 --
 
 CREATE TABLE `hocphitc` (
@@ -81,16 +103,17 @@ CREATE TABLE `hocphitc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `hocphitc`
+-- Đang đổ dữ liệu cho bảng `hocphitc`
 --
 
 INSERT INTO `hocphitc` (`HocKy`, `NamHoc`, `GiaHocPhiMoiTinChi`) VALUES
-('1', '2024-2025', 4000.00);
+('1', '2024-2025', 500000.00),
+('2', '2024-2025', 600000.00);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketquahoctap`
+-- Cấu trúc bảng cho bảng `ketquahoctap`
 --
 
 CREATE TABLE `ketquahoctap` (
@@ -99,20 +122,23 @@ CREATE TABLE `ketquahoctap` (
   `HocKy` varchar(10) NOT NULL,
   `NamHoc` varchar(10) NOT NULL,
   `Diem` float(3,2) DEFAULT NULL CHECK (`Diem` >= 0 and `Diem` <= 10),
-  `TrangThai` enum('Pass','Fail') DEFAULT NULL
+  `TrangThai` enum('Đạt','Không đạt') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `ketquahoctap`
+-- Đang đổ dữ liệu cho bảng `ketquahoctap`
 --
 
 INSERT INTO `ketquahoctap` (`MaSoSV`, `MaMon`, `HocKy`, `NamHoc`, `Diem`, `TrangThai`) VALUES
-('sv001', 'CTDL', '1', '2024-2025', 9.00, '');
+('sv001', 'CNPM', '1', '2024-2025', 9.00, 'Đạt'),
+('sv001', 'CTDL', '1', '2024-2025', 4.00, 'Không đạt'),
+('sv002', 'CTDL', '1', '2024-2025', 8.00, 'Đạt'),
+('sv002', 'TMDT', '1', '2024-2025', 8.00, 'Đạt');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `monhoc`
+-- Cấu trúc bảng cho bảng `monhoc`
 --
 
 CREATE TABLE `monhoc` (
@@ -123,18 +149,20 @@ CREATE TABLE `monhoc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `monhoc`
+-- Đang đổ dữ liệu cho bảng `monhoc`
 --
 
 INSERT INTO `monhoc` (`MaMon`, `TenMon`, `SoTinChi`, `GiangVien`) VALUES
+('CNPM', 'Công nghệ phần mềm', 3, 'Nguyễn Đức Anh'),
 ('CTDL', 'CTDL & GT', 3, 'Hoàng văn chiến'),
-('KT0X2', 'Kinh tế xây dựng', 4, 'Nguyễn Hoàng Anh'),
-('LX3D4', 'Thương mại điện tử', 3, 'Trần văn tuấn');
+('KTXD', 'Kinh tế xây dựng', 4, 'Nguyễn Hoàng Anh'),
+('LTN', 'Lập Trình Nhúng', 3, 'Lã Quang Trung'),
+('TMDT', 'Thương mại điện tử', 3, 'Trần văn tuấn');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sinhvien`
+-- Cấu trúc bảng cho bảng `sinhvien`
 --
 
 CREATE TABLE `sinhvien` (
@@ -144,36 +172,26 @@ CREATE TABLE `sinhvien` (
   `GioiTinh` enum('Nam','Nữ','Khác') NOT NULL,
   `QueQuan` varchar(100) DEFAULT NULL,
   `Email` varchar(100) NOT NULL,
-  `SoDienThoai` varchar(15) NOT NULL
+  `SoDienThoai` varchar(15) NOT NULL,
+  `Avatar` varchar(255) DEFAULT 'default-avatar.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `sinhvien`
+-- Đang đổ dữ liệu cho bảng `sinhvien`
 --
 
-INSERT INTO `sinhvien` (`MaSoSV`, `HoTen`, `NgaySinh`, `GioiTinh`, `QueQuan`, `Email`, `SoDienThoai`) VALUES
-('sv001', 'Trương thành đạt', '2004-12-22', 'Nam', 'Nghi Lộc', 'ttuongdat@gmail.com', '0962204465'),
-('sv002', 'Nguyễn Công Minh', '2004-02-02', 'Nữ', 'hải dương', 'lickteig_cha@hotmail.com', '0929815807');
+INSERT INTO `sinhvien` (`MaSoSV`, `HoTen`, `NgaySinh`, `GioiTinh`, `QueQuan`, `Email`, `SoDienThoai`, `Avatar`) VALUES
+('sv001', 'nguyễn văn thành', '2004-12-01', 'Nam', 'Nghi Lộc', 'nguyenthanh@gmail.com', '0929815807', 'default-avatar.jpg'),
+('sv002', 'Nguyễn Công Minh', '2024-12-03', 'Nam', 'Nghi Lộc', 'congminh@gmail.com', '0345362111', 'avatar_677a7a47dcb3f4.27756828.png'),
+('sv003', 'Vũ Mạnh Cường', '2024-06-05', 'Nam', 'Hà đông', 'manhcuong@gmail.com', '0914748364', 'default-avatar.jpg'),
+('sv004', 'Nguyễn gia bảo', '2024-06-06', 'Nam', 'Đà nẵng', 'giabao@gmail.com', '0956330184', 'default-avatar.jpg'),
+('sv005', 'Hoàng văn mạnh', '2024-06-07', 'Nam', 'Nghệ An', 'vanmanh@gmail.com', '0956330185', 'default-avatar.jpg'),
+('sv006', 'Nguyễn hồng lộc', '2024-06-08', 'Nam', 'Đà nẵng', 'hongloc@gmail.com', '0956330186', 'default-avatar.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `thanh_toan`
---
-
-CREATE TABLE `thanh_toan` (
-  `MaSoSV` varchar(10) NOT NULL,
-  `MaMon` varchar(10) NOT NULL,
-  `HocKy` varchar(10) NOT NULL,
-  `NamHoc` varchar(10) NOT NULL,
-  `SoTienThanhToan` decimal(10,2) NOT NULL,
-  `NgayThanhToan` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -187,51 +205,57 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'ttuongdat@gmail.com', '123', 0, 'Truong thanh dat', '2024-11-18 19:04:49', '2024-11-18 19:30:39');
+(6, 'ttuongdat@gmail.com', '123', 0, 'Trương thành đạt', '2024-12-26 14:56:25', '2024-12-26 14:56:25'),
+(7, 'nguyenthanh@gmail.com', '123', 1, 'nguyễn văn thành', '2024-12-26 14:56:58', '2024-12-29 08:02:50'),
+(8, 'congminh@gmail.com', '123', 1, 'Nguyễn Công Minh', '2024-12-26 14:58:45', '2024-12-26 14:58:45'),
+(32, 'manhcuong@gmail.com', '123', 1, 'Vũ Mạnh Cường', '2025-01-08 18:25:49', '2025-01-08 18:25:49'),
+(33, 'giabao@gmail.com', '123', 1, 'Nguyễn gia bảo', '2025-01-08 18:25:49', '2025-01-08 18:25:49'),
+(34, 'vanmanh@gmail.com', '123', 1, 'Hoàng văn mạnh', '2025-01-08 18:25:49', '2025-01-08 18:25:49'),
+(35, 'hongloc@gmail.com', '123', 1, 'Nguyễn hồng lộc', '2025-01-08 18:25:49', '2025-01-08 18:25:49');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `dangkymonhoc`
+-- Chỉ mục cho bảng `dangkymonhoc`
 --
 ALTER TABLE `dangkymonhoc`
   ADD PRIMARY KEY (`MaSoSV`,`MaMon`,`HocKy`,`NamHoc`),
   ADD KEY `MaMon` (`MaMon`);
 
 --
--- Indexes for table `hocphi`
+-- Chỉ mục cho bảng `hocphi`
 --
 ALTER TABLE `hocphi`
   ADD PRIMARY KEY (`MaSoSV`,`MaMon`,`HocKy`,`NamHoc`),
   ADD KEY `MaMon` (`MaMon`);
 
 --
--- Indexes for table `hocphitc`
+-- Chỉ mục cho bảng `hocphitc`
 --
 ALTER TABLE `hocphitc`
   ADD PRIMARY KEY (`HocKy`,`NamHoc`);
 
 --
--- Indexes for table `ketquahoctap`
+-- Chỉ mục cho bảng `ketquahoctap`
 --
 ALTER TABLE `ketquahoctap`
   ADD PRIMARY KEY (`MaSoSV`,`MaMon`,`HocKy`,`NamHoc`),
   ADD KEY `MaMon` (`MaMon`);
 
 --
--- Indexes for table `monhoc`
+-- Chỉ mục cho bảng `monhoc`
 --
 ALTER TABLE `monhoc`
   ADD PRIMARY KEY (`MaMon`);
 
 --
--- Indexes for table `sinhvien`
+-- Chỉ mục cho bảng `sinhvien`
 --
 ALTER TABLE `sinhvien`
   ADD PRIMARY KEY (`MaSoSV`),
@@ -239,60 +263,46 @@ ALTER TABLE `sinhvien`
   ADD UNIQUE KEY `SoDienThoai` (`SoDienThoai`);
 
 --
--- Indexes for table `thanh_toan`
---
-ALTER TABLE `thanh_toan`
-  ADD PRIMARY KEY (`MaSoSV`,`MaMon`,`HocKy`,`NamHoc`,`NgayThanhToan`),
-  ADD KEY `MaMon` (`MaMon`);
-
---
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `dangkymonhoc`
+-- Các ràng buộc cho bảng `dangkymonhoc`
 --
 ALTER TABLE `dangkymonhoc`
   ADD CONSTRAINT `dangkymonhoc_ibfk_1` FOREIGN KEY (`MaSoSV`) REFERENCES `sinhvien` (`MaSoSV`) ON DELETE CASCADE,
   ADD CONSTRAINT `dangkymonhoc_ibfk_2` FOREIGN KEY (`MaMon`) REFERENCES `monhoc` (`MaMon`) ON DELETE CASCADE;
 
 --
--- Constraints for table `hocphi`
+-- Các ràng buộc cho bảng `hocphi`
 --
 ALTER TABLE `hocphi`
   ADD CONSTRAINT `hocphi_ibfk_1` FOREIGN KEY (`MaSoSV`) REFERENCES `sinhvien` (`MaSoSV`) ON DELETE CASCADE,
   ADD CONSTRAINT `hocphi_ibfk_2` FOREIGN KEY (`MaMon`) REFERENCES `monhoc` (`MaMon`) ON DELETE CASCADE;
 
 --
--- Constraints for table `ketquahoctap`
+-- Các ràng buộc cho bảng `ketquahoctap`
 --
 ALTER TABLE `ketquahoctap`
   ADD CONSTRAINT `ketquahoctap_ibfk_1` FOREIGN KEY (`MaSoSV`) REFERENCES `sinhvien` (`MaSoSV`) ON DELETE CASCADE,
   ADD CONSTRAINT `ketquahoctap_ibfk_2` FOREIGN KEY (`MaMon`) REFERENCES `monhoc` (`MaMon`) ON DELETE CASCADE;
-
---
--- Constraints for table `thanh_toan`
---
-ALTER TABLE `thanh_toan`
-  ADD CONSTRAINT `thanh_toan_ibfk_1` FOREIGN KEY (`MaSoSV`) REFERENCES `sinhvien` (`MaSoSV`) ON DELETE CASCADE,
-  ADD CONSTRAINT `thanh_toan_ibfk_2` FOREIGN KEY (`MaMon`) REFERENCES `monhoc` (`MaMon`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

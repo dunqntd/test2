@@ -89,9 +89,71 @@ class result_student extends Controller
             }
 
             // Quay lại trang nhập kết quả
-            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/result_student/view_result/' . $maSoSV . '";</script>';
+            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/result_student/view_enter_score";</script>';
         }
     }
+    function uploadfile()
+    {
+        if (isset($_POST['btnUpload'])) {
+            try {
+                $file = $_FILES['txtFile']['tmp_name'];
+                $objReader = PHPExcel_IOFactory::createReaderForFile($file);
+                $objExcel = $objReader->load($file);
+                $sheet = $objExcel->getSheet(0);
+                $sheetData = $sheet->toArray(null, true, true, true);
+
+                for ($i = 2; $i <= count($sheetData); $i++) {
+                    $maSoSV = $sheetData[$i]["A"];
+                    $maMon = $sheetData[$i]["B"];
+                    $diem = $sheetData[$i]["E"];
+                    $hocKy = $sheetData[$i]["C"];
+                    $namHoc = $sheetData[$i]["D"];
+
+                    // Kiểm tra dữ liệu hợp lệ
+                    if (empty($maSoSV) || empty($maMon) || !is_numeric($diem) || empty($hocKy) || empty($namHoc)) {
+                        echo "<script>alert('Dữ liệu dòng $i trong file Excel không hợp lệ. Vui lòng kiểm tra lại!');</script>";
+                        continue;
+                    }
+
+                    // Kiểm tra môn học có hợp lệ không
+                    $registeredCourses = $this->rs->get_registered_courses($maSoSV, $hocKy);
+                    $isValidCourse = false;
+
+                    foreach ($registeredCourses as $course) {
+                        if ($course['MaMon'] === $maMon) {
+                            $isValidCourse = true;
+                            break;
+                        }
+                    }
+
+                    if (!$isValidCourse) {
+                        error_log("Môn học $maMon không hợp lệ cho sinh viên $maSoSV trong học kỳ $hocKy.");
+                        echo "<script>alert('Môn học \"$maMon\" không hợp lệ cho sinh viên \"$maSoSV\".');</script>";
+                        continue;
+                    }
+
+                    // Lưu điểm
+                    $kq = $this->rs->insert_student_result($maSoSV, $maMon, $diem, $hocKy, $namHoc);
+                    if (!$kq) {
+                        echo "<script>alert('Lỗi khi lưu điểm cho sinh viên \"$maSoSV\", môn \"$maMon\".');</script>";
+                    } else {
+                        echo "<script>alert('Thêm kết quả thành công!')</script>";
+                    }
+                }
+            } catch (Exception $e) {
+                echo "<script>alert('Lỗi xử lý file Excel: {$e->getMessage()}');</script>";
+            }
+
+            $danhSachSinhVien = $this->rs->get_student_infor();
+            $this->view('Masterlayout', [
+                'page' => 'select_student_v',
+                'danhsachsinhvien' => $danhSachSinhVien
+            ]);
+            exit;
+        }
+    }
+
+
 
     public function view_result($id)
     {

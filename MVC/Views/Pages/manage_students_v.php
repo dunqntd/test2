@@ -23,9 +23,9 @@
                 <input type="text" class="form-control1" id="myname" placeholder="" name="txtname" value="<?php if (isset($data['name'])) echo $data['name'] ?>">
 
                 <button style="margin-left: 1cm; background-color: #26a69a;" type="submit" class="btn btn-primary" name="btnTimkiem">Tìm Kiếm</button>
-                <!-- <button type="submit" class="btn btn-success" name="btnXuatExcel" style="margin-left: 230px;">
+                <button type="submit" class="btn btn-success" name="btnXuatExcel" style="margin-left: 230px;">
                     Xuất Excel
-                </button> -->
+                </button>
             </div>
             <br>
             <table class="table table-hover table-bordered table-striped align-middle ">
