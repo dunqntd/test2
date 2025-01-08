@@ -15,6 +15,14 @@ class manage_accounts_m extends connectDB
         }
         return $accounts;
     }
+    public function timkiem_find($email, $name)
+    {
+        $sql = "SELECT * FROM users WHERE email LIKE '%$email%' AND name LIKE '%$name%'";
+        $result = mysqli_query($this->con, $sql);
+
+
+        return $result;
+    }
     public function update_account($id, $email, $password, $role, $name)
     {
         $sql = "UPDATE users SET email = ?, password = ?, role = ?, name = ?, updated_at = NOW() WHERE id = ?";

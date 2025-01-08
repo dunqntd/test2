@@ -9,6 +9,14 @@ class result_student_m extends connectDB
 
         return $result; // Trả về tất cả kết quả dưới dạng mảng
     }
+    public function ketqua_find($masv, $name)
+    {
+        $sql = "SELECT * FROM sinhvien WHERE MaSoSV LIKE '%$masv%' AND HoTen LIKE '%$name%'";
+        $result = mysqli_query($this->con, $sql);
+
+
+        return $result;
+    }
     public function get_student_by_id($id)
     {
         $sql = "SELECT * FROM sinhvien WHERE MaSoSV LIKE '%$id%'";
@@ -28,6 +36,7 @@ class result_student_m extends connectDB
 
         return $result;
     }
+
     public function get_registered_courses($student_id)
     {
         $sql = "SELECT m.MaMon, m.TenMon, m.SoTinChi 

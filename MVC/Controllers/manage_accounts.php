@@ -17,6 +17,27 @@ class manage_accounts extends Controller
             'accounts' => $accounts,
         ]);
     }
+    public function timkiem()
+    {
+        if (isset($_POST['btnTimkiem'])) {
+            $email = $_POST['txtemail'];
+
+            $name = $_POST['txtname'];
+            $accounts = $this->manage_accounts->timkiem_find($email, $name);
+
+            // Gọi lại giao diện và truyền $dl ra
+            $this->view('Masterlayout', [
+                'page' => 'manage_accounts_v',
+                'accounts' => $accounts,
+                'email' => $email,
+
+                'name' => $name
+            ]);
+            exit;
+        }
+        if (isset($_POST['btndkmon'])) {
+        }
+    }
     public function update_account()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

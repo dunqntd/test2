@@ -19,6 +19,27 @@
                 'danhsachsinhvien' => $danhSachSinhVien
             ]);
         }
+        public function timkiem()
+        {
+            if (isset($_POST['btnTimkiem'])) {
+                $masv = $_POST['txtMasv'];
+
+                $name = $_POST['txtname'];
+                $dl = $this->rs->ketqua_find($masv, $name);
+
+                // Gọi lại giao diện và truyền $dl ra
+                $this->view('Masterlayout', [
+                    'page' => 'select_student_v',
+                    'danhsachsinhvien' => $dl,
+                    'Masv' => $masv,
+
+                    'name' => $name
+                ]);
+                exit;
+            }
+            if (isset($_POST['btndkmon'])) {
+            }
+        }
 
         public function view_enter_score()
         {

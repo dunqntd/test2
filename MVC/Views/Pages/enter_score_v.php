@@ -33,12 +33,12 @@
         <!-- Điểm và thông tin khác -->
         <div class="mb-3">
             <label for="Diem">Điểm</label>
-            <input type="number" id="Diem" name="Diem" step="0.01" min="0" max="10" class="form-control" required placeholder="">
+            <input type="number" id="Diem" name="Diem" step="0.01" min="0" max="10" class="form-control" required placeholder="0">
         </div>
         <div class="mb-3">
             <label for="HocKy">Học kỳ</label>
             <select id="HocKy" name="HocKy" class="form-select" required>
-                <option value="" disabled selected></option>
+                <option value="" disabled selected>-- Chọn học kì --</option>
                 <option value="1">Học kỳ 1</option>
                 <option value="2">Học kỳ 2</option>
             </select>
