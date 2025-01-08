@@ -14,7 +14,7 @@
     <form action="http://localhost/project_quanlisinhvien/manage_accounts/timkiem" method="post">
 
         <div class="container mt-6">
-            <div class="d-flex justify-content-between mb-3">
+            <div class="d-flex justify-content-between mb-2">
                 <h4>Danh sách tài khoản</h4>
             </div>
             <div class="form-inline">

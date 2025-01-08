@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Page Header -->
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
                         <h2>Quản lý môn học</h2>
 
                     </div>

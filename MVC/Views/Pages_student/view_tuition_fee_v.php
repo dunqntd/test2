@@ -18,8 +18,9 @@
                     <tr>
                         <td><?php echo $row['MaSoSV']; ?></td>
                         <td><?php echo $row['TongSoTinChi']; ?></td>
-                        <td><?php echo number_format($row['TongHocPhi'], 0, ',', '.'); ?> VNĐ</td>
-                        <td><?php echo number_format($row['TongTienDaNop'], 0, ',', '.'); ?> VNĐ</td>
+
+                        <td><?php echo number_format($row['TongHocPhi'], 2); ?> VNĐ</td>
+                        <td><?php echo number_format($row['TongTienDaNop'], 2); ?> VNĐ</td>
                         <td><?php echo $row['HocKy']; ?></td>
                         <td><?php echo $row['NamHoc']; ?></td>
                         <td>

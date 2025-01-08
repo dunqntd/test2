@@ -16,6 +16,8 @@ class manage_Tuition_m extends connectDB
         return $result;
     }
 
+
+
     public function getTuitionInformation()
     {
         $sql = "SELECT * FROM hocphitc";  // Lấy dữ liệu học phí từ bảng hocphitc

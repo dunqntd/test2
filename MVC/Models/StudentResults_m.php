@@ -1,16 +1,25 @@
 <?php
 class StudentResults_m extends connectDB
 {
-    public function get_student_results($id)
+    public function get_student_results_by_semester_and_year($studentId, $hocKy, $namHoc)
     {
-        $sql = "SELECT * FROM ketquahoctap a
-        join monhoc b on b.MaMon=a.MaMon
-         WHERE a.MaSoSV LIKE '%$id%'";
+        // Xây dựng câu truy vấn với các điều kiện lọc
+        $sql = "SELECT * FROM ketquahoctap 
+            JOIN monhoc ON monhoc.MaMon = ketquahoctap.MaMon
+            WHERE ketquahoctap.MaSoSV = '$studentId'";
+
+        // Thêm điều kiện cho học kỳ và năm học nếu có
+        if ($hocKy) {
+            $sql .= " AND ketquahoctap.HocKy = '$hocKy'";
+        }
+        if ($namHoc) {
+            $sql .= " AND ketquahoctap.NamHoc = '$namHoc'";
+        }
+
         $result = mysqli_query($this->con, $sql);
-
-
         return $result;
     }
+
 
     public function get_tuition_summary_by_student($student_id)
     {
@@ -22,8 +31,9 @@ class StudentResults_m extends connectDB
                 h.HocKy,
                 h.NamHoc,
                 CASE 
-                    WHEN SUM(h.SoTienDaThanhToan) >= SUM(h.SoTien) THEN 'Đã Thanh Toán'
-                    ELSE 'Chưa Thanh Toán'
+                     WHEN SUM(CASE WHEN h.TrangThai = 'Chua thanh toan' THEN 1 ELSE 0 END) > 0 THEN 'Chua thanh toan'
+                WHEN SUM(CASE WHEN h.SoTienDaThanhToan < h.SoTien THEN 1 ELSE 0 END) > 0 THEN 'Mot phan thanh toan'
+                ELSE 'Da thanh toan'
                 END AS TrangThai
             FROM hocphi h
             JOIN monhoc m ON h.MaMon = m.MaMon

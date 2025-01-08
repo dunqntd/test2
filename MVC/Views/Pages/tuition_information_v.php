@@ -1,5 +1,7 @@
 <div class="container">
     <h2>Thông tin học phí sinh viên</h2>
+
+
     <table class="table table-bordered">
         <thead>
             <tr>
