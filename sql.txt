@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 08, 2025 lúc 08:42 PM
+-- Thời gian đã tạo: Th1 10, 2025 lúc 05:06 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -46,13 +46,19 @@ INSERT INTO `dangkymonhoc` (`MaSoSV`, `MaMon`, `HocKy`, `NamHoc`) VALUES
 ('sv001', 'TMDT', '2', '2024-2025'),
 ('sv002', 'CNPM', '1', '2024-2025'),
 ('sv002', 'CTDL', '1', '2024-2025'),
+('sv002', 'KTXD', '1', '2024-2025'),
 ('sv002', 'LTN', '1', '2024-2025'),
 ('sv002', 'TMDT', '1', '2024-2025'),
 ('sv003', 'CNPM', '1', '2024-2025'),
 ('sv003', 'CTDL', '1', '2024-2025'),
 ('sv003', 'KTXD', '1', '2024-2025'),
 ('sv003', 'LTN', '1', '2024-2025'),
-('sv003', 'TMDT', '1', '2024-2025');
+('sv003', 'TMDT', '1', '2024-2025'),
+('sv004', 'CNPM', '2', '2024-2025'),
+('sv004', 'CTDL', '1', '2024-2025'),
+('sv004', 'KTXD', '2', '2024-2025'),
+('sv004', 'LTN', '1', '2024-2025'),
+('sv004', 'TMDT', '2', '2024-2025');
 
 -- --------------------------------------------------------
 
@@ -75,20 +81,26 @@ CREATE TABLE `hocphi` (
 --
 
 INSERT INTO `hocphi` (`MaSoSV`, `MaMon`, `HocKy`, `NamHoc`, `SoTien`, `SoTienDaThanhToan`, `TrangThai`) VALUES
-('sv001', 'CNPM', '1', '2024-2025', 5000000.00, 0.00, 'Chua thanh toan'),
-('sv001', 'CTDL', '1', '2024-2025', 5000000.00, 0.00, 'Chua thanh toan'),
-('sv001', 'KTXD', '1', '2024-2025', 5000000.00, 0.00, 'Chua thanh toan'),
-('sv001', 'LTN', '2', '2024-2025', 3600000.00, 0.00, 'Chua thanh toan'),
-('sv001', 'TMDT', '2', '2024-2025', 3600000.00, 0.00, 'Chua thanh toan'),
-('sv002', 'CNPM', '1', '2024-2025', 6000000.00, 0.00, 'Chua thanh toan'),
-('sv002', 'CTDL', '1', '2024-2025', 6000000.00, 0.00, 'Chua thanh toan'),
-('sv002', 'LTN', '1', '2024-2025', 6000000.00, 0.00, 'Chua thanh toan'),
-('sv002', 'TMDT', '1', '2024-2025', 6000000.00, 0.00, 'Chua thanh toan'),
-('sv003', 'CNPM', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan'),
-('sv003', 'CTDL', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan'),
-('sv003', 'KTXD', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan'),
-('sv003', 'LTN', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan'),
-('sv003', 'TMDT', '1', '2024-2025', 8000000.00, 0.00, 'Chua thanh toan');
+('sv001', 'CNPM', '1', '2024-2025', 1500000.00, 0.00, 'Chua thanh toan'),
+('sv001', 'CTDL', '1', '2024-2025', 1500000.00, 0.00, 'Chua thanh toan'),
+('sv001', 'KTXD', '1', '2024-2025', 2000000.00, 0.00, 'Chua thanh toan'),
+('sv001', 'LTN', '2', '2024-2025', 1800000.00, 0.00, 'Chua thanh toan'),
+('sv001', 'TMDT', '2', '2024-2025', 1800000.00, 0.00, 'Chua thanh toan'),
+('sv002', 'CNPM', '1', '2024-2025', 1500000.00, 1500000.00, 'Da thanh toan'),
+('sv002', 'CTDL', '1', '2024-2025', 1500000.00, 1500000.00, 'Da thanh toan'),
+('sv002', 'KTXD', '1', '2024-2025', 2000000.00, 2000000.00, 'Da thanh toan'),
+('sv002', 'LTN', '1', '2024-2025', 1500000.00, 1500000.00, 'Da thanh toan'),
+('sv002', 'TMDT', '1', '2024-2025', 1500000.00, 1500000.00, 'Da thanh toan'),
+('sv003', 'CNPM', '1', '2024-2025', 1500000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'CTDL', '1', '2024-2025', 1500000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'KTXD', '1', '2024-2025', 2000000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'LTN', '1', '2024-2025', 1500000.00, 0.00, 'Chua thanh toan'),
+('sv003', 'TMDT', '1', '2024-2025', 1500000.00, 0.00, 'Chua thanh toan'),
+('sv004', 'CNPM', '2', '2024-2025', 1800000.00, 0.00, 'Chua thanh toan'),
+('sv004', 'CTDL', '1', '2024-2025', 1500000.00, 1500000.00, 'Da thanh toan'),
+('sv004', 'KTXD', '2', '2024-2025', 2400000.00, 0.00, 'Chua thanh toan'),
+('sv004', 'LTN', '1', '2024-2025', 1500000.00, 1500000.00, 'Da thanh toan'),
+('sv004', 'TMDT', '2', '2024-2025', 1800000.00, 0.00, 'Chua thanh toan');
 
 -- --------------------------------------------------------
 
@@ -181,7 +193,7 @@ CREATE TABLE `sinhvien` (
 --
 
 INSERT INTO `sinhvien` (`MaSoSV`, `HoTen`, `NgaySinh`, `GioiTinh`, `QueQuan`, `Email`, `SoDienThoai`, `Avatar`) VALUES
-('sv001', 'nguyễn văn thành', '2004-12-01', 'Nam', 'Nghi Lộc', 'nguyenthanh@gmail.com', '0929815807', 'default-avatar.jpg'),
+('sv001', 'nguyễn văn thành', '2004-12-01', 'Nam', 'Nghi Lộc', 'nguyenthanh@gmail.com', '0929815807', 'avatar_677fd86bcdd979.29653790.png'),
 ('sv002', 'Nguyễn Công Minh', '2024-12-03', 'Nam', 'Nghi Lộc', 'congminh@gmail.com', '0345362111', 'avatar_677a7a47dcb3f4.27756828.png'),
 ('sv003', 'Vũ Mạnh Cường', '2024-06-05', 'Nam', 'Hà đông', 'manhcuong@gmail.com', '0914748364', 'default-avatar.jpg'),
 ('sv004', 'Nguyễn gia bảo', '2024-06-06', 'Nam', 'Đà nẵng', 'giabao@gmail.com', '0956330184', 'default-avatar.jpg'),

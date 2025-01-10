@@ -29,28 +29,37 @@ class student_registration extends Controller
             // Kiểm tra xem sinh viên đã đăng nhập chưa
             $student = isset($_SESSION['student']) ? $_SESSION['student'] : null;
 
-
-
             $studentId = $student['MaSoSV']; // Lấy mã sinh viên từ session
             $semester = $_POST['semester'];
             $academicYear = $_POST['academic_year'];
             $courses = isset($_POST['courses']) ? $_POST['courses'] : [];
 
-            // Kiểm tra xem sinh viên đã chọn môn học chưa
-            if (empty($courses)) {
-                echo '<script>alert("Vui lòng chọn ít nhất một môn học!");</script>';
-                return;
+            $successCourses = [];
+            $failedCourses = [];
+            foreach ($courses as $courseId) {
+                $result = $this->registrationModel->registerCourseForStudent($studentId, $courseId, $semester, $academicYear);
+                if ($result) {
+                    $successCourses[] = $courseId;
+                } else {
+                    $failedCourses[] = $courseId;
+                }
             }
 
-            // Thực hiện đăng ký môn học
-            $registrationResult = $this->registrationModel->registerCourses($studentId, $semester, $academicYear, $courses);
+            // Thông báo kết quả
+            if (!empty($successCourses)) {
+                echo '<script>alert("Đăng ký thành công các môn học: ' . implode(', ', $successCourses) . '");</script>';
+            }
 
-            if ($registrationResult) {
+            if (!empty($failedCourses)) {
+                echo '<script>alert("Môn học đã đăng ký trước đó: ' . implode(', ', $failedCourses) . '");</script>';
+            }
+
+
+            if ($result) {
                 echo '<script>alert("Đăng ký môn học thành công!");</script>';
                 echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/student_registration";</script>';
-            } else {
-                echo '<script>alert("Đã có lỗi xảy ra trong quá trình đăng ký. Vui lòng thử lại.");</script>';
             }
+            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/student_registration";</script>';
         }
     }
     public function view_registered_courses()

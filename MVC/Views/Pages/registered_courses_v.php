@@ -6,6 +6,7 @@
             <tr>
                 <th>Mã Môn</th>
                 <th>Tên Môn</th>
+                <th>Số Tín Chỉ</th>
                 <th>Học Kỳ</th>
                 <th>Năm Học</th>
                 <th>Hành Động</th>
@@ -17,6 +18,7 @@
                     <tr>
                         <td><?php echo $course['MaMon']; ?></td>
                         <td><?php echo $course['TenMon']; ?></td>
+                        <td><?php echo $course['SoTinChi']; ?></td>
                         <td><?php echo $course['HocKy']; ?></td>
                         <td><?php echo $course['NamHoc']; ?></td>
                         <td>

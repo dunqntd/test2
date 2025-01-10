@@ -64,17 +64,16 @@ class registration_m extends connectDB
     }
 
 
-    // Kiểm tra xem sinh viên đã đăng ký môn học chưa (tránh trùng lặp)
-    public function isCourseAlreadyRegistered($studentId, $courseId)
+    public function isCourseAlreadyRegistered($studentId, $courseId, $semester, $academicYear)
     {
-        $sql = "SELECT * FROM dangkymonhoc WHERE MaSoSV = ? AND MaMon = ?";
+        $sql = "SELECT * FROM dangkymonhoc WHERE MaSoSV = ? AND MaMon = ? AND HocKy = ? AND NamHoc = ?";
         $stmt = $this->con->prepare($sql);
 
         if (!$stmt) {
             die("Prepare statement failed: " . $this->con->error);
         }
 
-        $stmt->bind_param("ss", $studentId, $courseId);
+        $stmt->bind_param("ssss", $studentId, $courseId, $semester, $academicYear);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -86,9 +85,10 @@ class registration_m extends connectDB
     }
 
 
+
     public function getRegisteredCourses($studentId)
     {
-        $sql = "SELECT mh.MaMon, mh.TenMon, dk.HocKy, dk.NamHoc 
+        $sql = "SELECT mh.MaMon, mh.TenMon, dk.HocKy, dk.NamHoc ,mh.SoTinChi
             FROM dangkymonhoc dk 
             JOIN monhoc mh ON dk.MaMon = mh.MaMon 
             WHERE dk.MaSoSV = ?";
