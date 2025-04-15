@@ -1,6 +1,6 @@
 <div class="container my-6">
     <h2>Đăng ký môn học cho sinh viên</h2>
-    <form action="http://localhost/project_quanlisinhvien/registration/registerCoursesForStudent" method="POST">
+    <form action="http://websinhvien.local/registration/registerCoursesForStudent" method="POST">
         <!-- Chọn sinh viên -->
         <div class="form-group mb-3">
             <label for="student">Sinh Viên:</label>

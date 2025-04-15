@@ -4,7 +4,7 @@
             <h3 class="mb-0">Nhập Điểm Sinh Viên</h3>
         </div>
         <div class="card-body">
-            <form action="http://localhost/project_quanlisinhvien/result_student/save_result" method="POST">
+            <form action="http://websinhvien.local/result_student/save_result" method="POST">
                 <!-- Chọn sinh viên -->
                 <div class="mb-4">
                     <label for="student_id" class="form-label">Sinh viên</label>
@@ -63,7 +63,7 @@
             <h5 class="mb-0 text-center">Nhập Điểm Bằng File</h5>
         </div>
         <div class="card-body">
-            <form method="post" enctype="multipart/form-data" action="http://localhost/project_quanlisinhvien/result_student/uploadfile">
+            <form method="post" enctype="multipart/form-data" action="http://websinhvien.local/result_student/uploadfile">
                 <div class="row align-items-center">
                     <div class="col-md-8 mb-3 mb-md-0">
                         <input type="file" class="form-control" id="txtFile" name="txtFile" required>
@@ -86,7 +86,7 @@
 
             if (student_id && semester) {
                 $.ajax({
-                    url: 'http://localhost/project_quanlisinhvien/result_student/get_registered_courses',
+                    url: 'http://websinhvien.local/result_student/get_registered_courses',
                     method: 'POST',
                     data: {
                         student_id: student_id,

@@ -91,7 +91,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="paymentForm" method="POST" action="http://localhost/project_quanlisinhvien/payment_tuition/submitPayment">
+                <form id="paymentForm" method="POST" action="http://websinhvien.local/payment_tuition/submitPayment">
                     <input type="hidden" name="MaSoSV" id="modalMaSoSV">
                     <input type="hidden" name="HocKy" id="modalHocKy">
                     <input type="hidden" name="NamHoc" id="modalNamHoc">

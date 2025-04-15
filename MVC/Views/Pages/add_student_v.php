@@ -1,4 +1,4 @@
-<form action="http://localhost/project_quanlisinhvien/manage_students/themmoi" method="post">
+<form action="http://websinhvien.local/manage_students/themmoi" method="post">
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-10">
@@ -70,7 +70,7 @@
                         <!-- Nút hành động -->
                         <div class="text-center mt-4">
                             <button type="submit" class="btn btn-success px-4" name="btnthem">Thêm Sinh Viên</button>
-                            <a href="http://localhost/project_quanlisinhvien/manage_students/Get_data" class="btn btn-outline-secondary px-4">Quay lại danh sách</a>
+                            <a href="http://websinhvien.local/manage_students/Get_data" class="btn btn-outline-secondary px-4">Quay lại danh sách</a>
                         </div>
 
                     </div>
@@ -81,7 +81,7 @@
 </form>
 
 <!-- Form tải file -->
-<form method="post" enctype="multipart/form-data" action="http://localhost/project_quanlisinhvien/manage_students/uploadfile">
+<form method="post" enctype="multipart/form-data" action="http://websinhvien.local/manage_students/uploadfile">
     <div class="container mt-4">
         <div class="card p-3">
             <h5 class="text-center mb-3">Thêm danh sách sinh viên bằng file</h5>

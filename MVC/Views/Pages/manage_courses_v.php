@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form method="post" action="http://localhost/project_quanlisinhvien/manage_courses/Timkiem">
+    <form method="post" action="http://websinhvien.local/manage_courses/Timkiem">
 
         <div class="container mt-6">
             <div class="row">
@@ -71,7 +71,7 @@
 
                                                 </a>
                                                 <!-- Button to delete course -->
-                                                <a href="http://localhost/project_quanlisinhvien/manage_courses/delete_course/<?= $row['MaMon'] ?>"
+                                                <a href="http://websinhvien.local/manage_courses/delete_course/<?= $row['MaMon'] ?>"
                                                     class="btn btn-danger btn-sm"
                                                     onclick="return confirm('Bạn có chắc chắn muốn xóa môn học này?')">
                                                     <i class="bi bi-trash"></i> Xóa
@@ -93,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <a href="http://localhost/project_quanlisinhvien/manage_courses/add_courses" class="btn btn-success">
+            <a href="http://websinhvien.local/manage_courses/add_courses" class="btn btn-success">
                 <i class="bi bi-plus-circle"></i> Thêm môn học
             </a>
         </div>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="modal-body p-4">
                     <!-- Edit course form -->
-                    <form action="http://localhost/project_quanlisinhvien/manage_courses/update_course" method="POST">
+                    <form action="http://websinhvien.local/manage_courses/update_course" method="POST">
                         <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label for="editCourseId" class="form-label">Course Code</label>

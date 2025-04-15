@@ -33,7 +33,7 @@ class payment_tuition  extends Controller
             $this->payment_tuition->submitPayment($MaSoSV, $HocKy, $NamHoc, $SoTienThanhToan);
 
 
-            header("Location: http://localhost/project_quanlisinhvien/payment_tuition/");
+            header("Location: http://websinhvien.local/payment_tuition/");
             exit;
         }
     }

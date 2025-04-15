@@ -27,14 +27,14 @@ class LoginController extends Controller
                 // Phân quyền
                 if ($user['role'] == 0) {
                     // Admin
-                    header('Location: http://localhost/project_quanlisinhvien/admin_dashboard');
+                    header('Location: http://websinhvien.local/admin_dashboard');
                 } elseif ($user['role'] == 1) {
                     // Sinh viên
                     $student = $this->loginModel->getStudentByEmail($email);
 
                     if ($student) {
                         $_SESSION['student'] = $student;
-                        header('Location: http://localhost/project_quanlisinhvien/Home/student_dashboard');
+                        header('Location: http://websinhvien.local/Home/student_dashboard');
                     } else {
                         $error = "Không tìm thấy thông tin sinh viên!";
                         $this->view('Login_v', ['error' => $error]);
@@ -53,6 +53,6 @@ class LoginController extends Controller
     public function logout()
     {
         session_destroy();
-        header('Location: http://localhost/project_quanlisinhvien/LoginController');
+        header('Location: http://websinhvien.local/LoginController');
     }
 }

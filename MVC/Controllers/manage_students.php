@@ -149,7 +149,7 @@ class Manage_students extends Controller
             // Kiểm tra kết quả trả về
             if ($insertResult === true) {
                 echo '<script>alert("Thêm mới thành công!");</script>';
-                echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/manage_students/Get_data";</script>';
+                echo '<script>window.location.href = "http://websinhvien.local/manage_students/Get_data";</script>';
                 exit;
             } else {
                 // Hiển thị lỗi và giữ lại dữ liệu người dùng
@@ -218,7 +218,7 @@ class Manage_students extends Controller
         } else {
             echo '<script>alert("Sửa thất bại")</script>';
         }
-        echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/manage_students/Get_data";</script>';
+        echo '<script>window.location.href = "http://websinhvien.local/manage_students/Get_data";</script>';
         exit;
     }
     public function delete_student($masv)
@@ -229,7 +229,7 @@ class Manage_students extends Controller
         } else {
             echo '<script>alert("Xóa thất bại")</script>';
         }
-        echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/manage_students/Get_data";</script>';
+        echo '<script>window.location.href = "http://websinhvien.local/manage_students/Get_data";</script>';
         exit;
     }
 }

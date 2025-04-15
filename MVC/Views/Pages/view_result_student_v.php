@@ -28,7 +28,7 @@
     <?php } ?>
 
     <!-- Chọn học kỳ và năm học -->
-    <form method="POST" action="http://localhost/project_quanlisinhvien/result_student/view_result/<?php echo $student['MaSoSV']; ?>">
+    <form method="POST" action="http://websinhvien.local/result_student/view_result/<?php echo $student['MaSoSV']; ?>">
         <div class="form-container">
             <div class="form-group">
                 <label for="HocKy">Học kỳ:</label>

@@ -89,7 +89,7 @@ class result_student extends Controller
             }
 
             // Quay lại trang nhập kết quả
-            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/result_student/view_enter_score";</script>';
+            echo '<script>window.location.href = "http://websinhvien.local/result_student/view_enter_score";</script>';
         }
     }
     function uploadfile()

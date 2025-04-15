@@ -44,7 +44,7 @@ class profile extends Controller
                 if (move_uploaded_file($fileTmpPath, $dest_path)) {
                     $this->profile->updateAvatar($maSoSV, $newFileName);
                     $_SESSION['message'] = 'Cập nhật ảnh đại diện thành công!';
-                    header('Location: http://localhost/project_quanlisinhvien/profile');
+                    header('Location: http://websinhvien.local/profile');
                     exit;
                 } else {
                     $_SESSION['error'] = 'Không thể tải ảnh lên.';
@@ -52,7 +52,7 @@ class profile extends Controller
             } else {
                 $_SESSION['error'] = 'Định dạng file không hợp lệ.';
             }
-            header('Location: http://localhost/project_quanlisinhvien/profile');
+            header('Location: http://websinhvien.local/profile');
         }
     }
 }

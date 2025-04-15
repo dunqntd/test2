@@ -57,9 +57,9 @@ class student_registration extends Controller
 
             if ($result) {
                 echo '<script>alert("Đăng ký môn học thành công!");</script>';
-                echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/student_registration";</script>';
+                echo '<script>window.location.href = "http://websinhvien.local/student_registration";</script>';
             }
-            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/student_registration";</script>';
+            echo '<script>window.location.href = "http://websinhvien.local/student_registration";</script>';
         }
     }
     public function view_registered_courses()

@@ -1,4 +1,4 @@
-<form action="http://localhost/project_quanlisinhvien/manage_accounts/addAccount" method="post">
+<form action="http://websinhvien.local/manage_accounts/addAccount" method="post">
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="text-center mt-4">
                             <button type="submit" class="btn btn-success px-4">Thêm Tài Khoản</button>
-                            <a href="http://localhost/project_quanlisinhvien/manage_accounts/Get_data" class="btn btn-outline-secondary px-4">Quay Lại</a>
+                            <a href="http://websinhvien.local/manage_accounts/Get_data" class="btn btn-outline-secondary px-4">Quay Lại</a>
                         </div>
                     </div>
                 </div>

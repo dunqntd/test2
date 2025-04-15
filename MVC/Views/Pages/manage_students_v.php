@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form method="post" action="http://localhost/project_quanlisinhvien/manage_students/Timkiem">
+    <form method="post" action="http://websinhvien.local/manage_students/Timkiem">
 
         <div class="container mt-6">
             <h2 class="mb-2">Quản lí sinh viên</h2>
@@ -69,10 +69,10 @@
                                         data-gender="<?php echo $row['GioiTinh']; ?>"
                                         data-bs-toggle="modal"
                                         data-bs-target="#editModal">Sửa</a>
-                                    <a href="http://localhost/project_quanlisinhvien/manage_students/delete_student/<?php echo $row['MaSoSV']; ?>"
+                                    <a href="http://websinhvien.local/manage_students/delete_student/<?php echo $row['MaSoSV']; ?>"
                                         class="btn btn-sm btn-danger"
                                         onclick="return confirm('Bạn có chắc chắn muốn xóa sinh viên này?')">Xóa</a>
-                                    <a href="http://localhost/project_quanlisinhvien/registration/viewRegisteredCourses/<?php echo $row['MaSoSV']; ?>"
+                                    <a href="http://websinhvien.local/registration/viewRegisteredCourses/<?php echo $row['MaSoSV']; ?>"
                                         class="btn btn-sm btn-info">Môn học</a>
                                 </td>
                             </tr>
@@ -88,7 +88,7 @@
                     ?>
                 </tbody>
             </table>
-            <a href="http://localhost/project_quanlisinhvien/manage_students/addstudent" class="btn btn-success">Thêm Sinh Viên</a>
+            <a href="http://websinhvien.local/manage_students/addstudent" class="btn btn-success">Thêm Sinh Viên</a>
         </div>
     </form>
     <!-- Modal for edit student -->
@@ -101,7 +101,7 @@
                 </div>
                 <div class="modal-body p-4">
                     <!-- Edit student form -->
-                    <form action="http://localhost/project_quanlisinhvien/manage_students/edit_student" method="POST">
+                    <form action="http://websinhvien.local/manage_students/edit_student" method="POST">
                         <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label for="editStudentId" class="form-label">Mã Sinh Viên</label>

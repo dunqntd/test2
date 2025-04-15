@@ -40,7 +40,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form action="http://localhost/project_quanlisinhvien/registration/updateCourse" method="POST">
+                                <form action="http://websinhvien.local/registration/updateCourse" method="POST">
                                     <div class="modal-body">
                                         <input type="hidden" name="student_id" value="<?php echo $data['studentId']; ?>">
                                         <input type="hidden" name="course_id" value="<?php echo $course['MaMon']; ?>">
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                                    <a href="http://localhost/project_quanlisinhvien/registration/deleteCourse/<?php echo $course['MaMon']; ?>/<?php echo $data['studentId']; ?>" class="btn btn-danger">Xóa</a>
+                                    <a href="http://websinhvien.local/registration/deleteCourse/<?php echo $course['MaMon']; ?>/<?php echo $data['studentId']; ?>" class="btn btn-danger">Xóa</a>
                                 </div>
                             </div>
                         </div>

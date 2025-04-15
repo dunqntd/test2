@@ -10,7 +10,7 @@
 
 <body>
     <!-- Header -->
-    <form action="http://localhost/project_quanlisinhvien/result_student/timkiem" method="post">
+    <form action="http://websinhvien.local/result_student/timkiem" method="post">
         <header class=" mp-4 ">
             <h2>Kết Quả Học Tập</h2>
         </header>
@@ -55,7 +55,7 @@
                                 <td><?php echo $row['GioiTinh']; ?></td>
                                 <td><?php echo $row['QueQuan']; ?></td>
                                 <td>
-                                    <a href="http://localhost/project_quanlisinhvien/result_student/view_result/<?php echo $row['MaSoSV']; ?>"
+                                    <a href="http://websinhvien.local/result_student/view_result/<?php echo $row['MaSoSV']; ?>"
                                         class="btn btn-sm btn-info">Xem kết quả</a>
                                     </a>
 

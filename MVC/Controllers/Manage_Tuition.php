@@ -44,7 +44,7 @@ class manage_Tuition extends Controller
             echo '<script>alert("Thêm thất bại!");</script>';
         }
 
-        header("Location: http://localhost/project_quanlisinhvien/manage_tuition/");
+        header("Location: http://websinhvien.local/manage_tuition/");
         exit;
     }
 
@@ -65,7 +65,7 @@ class manage_Tuition extends Controller
 
 
         // Chuyển hướng lại trang tạo học phí
-        header("Location: http://localhost/project_quanlisinhvien/manage_tuition/");
+        header("Location: http://websinhvien.local/manage_tuition/");
         exit;
     }
 
@@ -79,7 +79,7 @@ class manage_Tuition extends Controller
         $_SESSION['message'] = $message;
 
         // Chuyển hướng lại trang danh sách học phí
-        header("Location: http://localhost/project_quanlisinhvien/manage_tuition/");
+        header("Location: http://websinhvien.local/manage_tuition/");
         exit;
     }
 }

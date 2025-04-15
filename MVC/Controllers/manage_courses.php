@@ -56,7 +56,7 @@ class manage_courses extends controller
 
             if ($result) {
                 echo '<script>alert("Thêm môn học thành công!");</script>';
-                echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/manage_courses/Get_data";</script>';
+                echo '<script>window.location.href = "http://websinhvien.local/manage_courses/Get_data";</script>';
             } else {
                 echo '<script>alert("Thêm môn học thất bại! Vui lòng kiểm tra lại.");</script>';
                 echo '<script>window.history.back();</script>';
@@ -71,7 +71,7 @@ class manage_courses extends controller
         } else {
             echo '<script>alert("Xóa thất bại")</script>';
         }
-        echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/manage_courses/Get_data";</script>';
+        echo '<script>window.location.href = "http://websinhvien.local/manage_courses/Get_data";</script>';
         exit;
     }
     public function update_course()
@@ -86,7 +86,7 @@ class manage_courses extends controller
         } else {
             echo '<script>alert("Sửa thất bại")</script>';
         }
-        echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/manage_courses/Get_data";</script>';
+        echo '<script>window.location.href = "http://websinhvien.local/manage_courses/Get_data";</script>';
         exit;
     }
 }

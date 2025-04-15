@@ -11,7 +11,7 @@
 
 
 
-    <form action="http://localhost/project_quanlisinhvien/manage_accounts/timkiem" method="post">
+    <form action="http://websinhvien.local/manage_accounts/timkiem" method="post">
 
         <div class="container mt-6">
             <div class="d-flex justify-content-between mb-2">
@@ -66,7 +66,7 @@
                                         Sửa
                                     </button>
 
-                                    <a href="http://localhost/project_quanlisinhvien/manage_accounts/delete/<?php echo $account['id']; ?>"
+                                    <a href="http://websinhvien.local/manage_accounts/delete/<?php echo $account['id']; ?>"
                                         class="btn btn-danger btn-sm"
                                         onclick="return confirm('Bạn có chắc muốn xóa tài khoản này?')">Xóa</a>
                                 </td>
@@ -79,7 +79,7 @@
                     <?php endif; ?>
                 </tbody>
             </table>
-            <a href="http://localhost/project_quanlisinhvien/manage_accounts/view_addAccount" class="btn btn-success">Thêm Tài Khoản</a>
+            <a href="http://websinhvien.local/manage_accounts/view_addAccount" class="btn btn-success">Thêm Tài Khoản</a>
 
         </div>
 
@@ -138,7 +138,7 @@
         function confirmDelete(accountId) {
             if (confirm('Bạn có chắc chắn muốn xóa tài khoản này?')) {
                 // Gửi yêu cầu xóa tới server
-                window.location.href = `http://localhost/project_quanlisinhvien/manage_accounts/delete/${accountId}`;
+                window.location.href = `http://websinhvien.local/manage_accounts/delete/${accountId}`;
             }
         }
     </script>

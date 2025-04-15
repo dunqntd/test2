@@ -5,7 +5,7 @@
     </div>
 <?php endif; ?>
 
-<form method="POST" action="http://localhost/project_quanlisinhvien/manage_tuition/insert_Tuition/">
+<form method="POST" action="http://websinhvien.local/manage_tuition/insert_Tuition/">
     <h2>Tạo học phí</h2>
     <!-- Form để nhập học kỳ, năm học, và giá học phí mỗi tín chỉ -->
     <div class="form-group">

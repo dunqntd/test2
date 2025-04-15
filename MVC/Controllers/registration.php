@@ -54,7 +54,7 @@ class registration extends Controller
                 echo '<script>alert("Môn học đã đăng ký trước đó: ' . implode(', ', $failedCourses) . '");</script>';
             }
 
-            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/registration/Get_data";</script>';
+            echo '<script>window.location.href = "http://websinhvien.local/registration/Get_data";</script>';
             exit();
         }
     }
@@ -82,7 +82,7 @@ class registration extends Controller
             if ($updateResult) {
                 echo '<script>alert("Sửa môn học thành công!");</script>';
                 echo '<script>alert("Sửa môn học thành công!");</script>';
-                echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/registration/viewRegisteredCourses/" + "' . $studentId . '";</script>';
+                echo '<script>window.location.href = "http://websinhvien.local/registration/viewRegisteredCourses/" + "' . $studentId . '";</script>';
             } else {
                 echo '<script>alert("Có lỗi xảy ra khi sửa môn học. Vui lòng thử lại.");</script>';
             }
@@ -97,7 +97,7 @@ class registration extends Controller
 
         if ($result) {
             echo '<script>alert("Xóa môn học thành công!");</script>';
-            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/registration/viewRegisteredCourses/' . $studentId . '";</script>';
+            echo '<script>window.location.href = "http://websinhvien.local/registration/viewRegisteredCourses/' . $studentId . '";</script>';
         } else {
             echo '<script>alert("Có lỗi xảy ra khi xóa môn học.");</script>';
         }

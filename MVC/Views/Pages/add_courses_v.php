@@ -7,7 +7,7 @@
                     <h3>Thêm Môn Học</h3>
                 </div>
                 <div class="card-body">
-                    <form action="http://localhost/project_quanlisinhvien/manage_courses/save_course" method="POST">
+                    <form action="http://websinhvien.local/manage_courses/save_course" method="POST">
                         <!-- Course ID -->
                         <div class="mb-3">
                             <label for="courseId" class="form-label">Mã môn</label>
@@ -35,7 +35,7 @@
                         <!-- Submit Buttons -->
                         <div class="text-center mt-4">
                             <button type="submit" class="btn btn-success px-4">Thêm Môn Học</button>
-                            <a href="http://localhost/project_quanlisinhvien/manage_courses/Get_data" class="btn btn-outline-secondary px-4">Quay lại</a>
+                            <a href="http://websinhvien.local/manage_courses/Get_data" class="btn btn-outline-secondary px-4">Quay lại</a>
                         </div>
                     </form>
                 </div>

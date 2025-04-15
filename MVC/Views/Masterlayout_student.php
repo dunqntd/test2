@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ Thống Quản Lý Học Sinh</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="http://localhost/project_quanlisinhvien/Public/Css/Home.css">
-    <link rel="stylesheet" href="http://localhost/project_quanlisinhvien/Public/Css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://websinhvien.local/Public/Css/Home.css">
+    <link rel="stylesheet" href="http://websinhvien.local/Public/Css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- JavaScript -->
-    <script src="http://localhost/project_quanlisinhvien/Public/Js/popper.min.js"></script>
-    <script src="http://localhost/project_quanlisinhvien/Public/Js/jquery-3.3.1.slim.min.js"></script>
-    <script src="http://localhost/project_quanlisinhvien/Public/Js/bootstrap.min.js"></script>
+    <script src="http://websinhvien.local/Public/Js/popper.min.js"></script>
+    <script src="http://websinhvien.local/Public/Js/jquery-3.3.1.slim.min.js"></script>
+    <script src="http://websinhvien.local/Public/Js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
@@ -24,8 +24,8 @@
             <div class="logo fs-4 fw-bold me-auto">Hệ Thống Quản Lý Sinh Viên</div>
             <nav class="nav">
                 <ul class="d-flex list-unstyled mb-0">
-                    <li class="me-2"><a href="http://localhost/project_quanlisinhvien/Home/student_dashboard" class="text-white text-decoration-none">Trang chủ</a></li>
-                    <li class="me-2"><a href="http://localhost/project_quanlisinhvien/profile" class="text-white text-decoration-none">Hồ Sơ</a></li>
+                    <li class="me-2"><a href="http://websinhvien.local/Home/student_dashboard" class="text-white text-decoration-none">Trang chủ</a></li>
+                    <li class="me-2"><a href="http://websinhvien.local/profile" class="text-white text-decoration-none">Hồ Sơ</a></li>
                     <li><a href="#" class="text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#logoutModal">Đăng xuất</a></li>
                 </ul>
             </nav>
@@ -42,22 +42,22 @@
             <h5 class="mb-4">Chức Năng</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-3">
-                    <a href="http://localhost/project_quanlisinhvien/student_registration" class="nav-link text-white">
+                    <a href="http://websinhvien.local/student_registration" class="nav-link text-white">
                         <i class="bi bi-pencil-square"></i> Đăng Ký Môn Học
                     </a>
                 </li>
                 <li class="nav-item mb-3">
-                    <a href="http://localhost/project_quanlisinhvien/StudentResults" class="nav-link text-white">
+                    <a href="http://websinhvien.local/StudentResults" class="nav-link text-white">
                         <i class="bi bi-clipboard"></i> Kết Quả Học Tập
                     </a>
                 </li>
                 <li class="nav-item mb-3">
-                    <a href="http://localhost/project_quanlisinhvien/student_registration/view_registered_courses/" class="nav-link text-white">
+                    <a href="http://websinhvien.local/student_registration/view_registered_courses/" class="nav-link text-white">
                         <i class="bi bi-book"></i> Môn Học Đã Đăng Ký
                     </a>
                 </li>
                 <li class="nav-item mb-3">
-                    <a href="http://localhost/project_quanlisinhvien/StudentResults/view_tuition_fee" class="nav-link text-white">
+                    <a href="http://websinhvien.local/StudentResults/view_tuition_fee" class="nav-link text-white">
                         <i class="bi bi-cash"></i> Học Phí
                     </a>
                 </li>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                    <a href="http://localhost/project_quanlisinhvien/LoginController/logout" class="btn btn-primary">Đăng xuất</a>
+                    <a href="http://websinhvien.local/LoginController/logout" class="btn btn-primary">Đăng xuất</a>
                 </div>
             </div>
         </div>

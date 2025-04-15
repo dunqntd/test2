@@ -32,7 +32,7 @@
                         <button class="btn btn-warning" data-toggle="modal" data-target="#editModal" data-hocky="<?php echo $tuition['HocKy']; ?>" data-namhoc="<?php echo $tuition['NamHoc']; ?>" data-giatc="<?php echo $tuition['GiaHocPhiMoiTinChi']; ?>">Sửa</button>
 
                         <!-- Nút xóa học phí -->
-                        <a href="http://localhost/project_quanlisinhvien/manage_tuition/delete_Tuition/<?php echo $tuition['HocKy']; ?>/<?php echo $tuition['NamHoc']; ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa học phí này không?')">Xóa</a>
+                        <a href="http://websinhvien.local/manage_tuition/delete_Tuition/<?php echo $tuition['HocKy']; ?>/<?php echo $tuition['NamHoc']; ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa học phí này không?')">Xóa</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
@@ -45,7 +45,7 @@
     </tbody>
 </table>
 
-<a href="http://localhost/project_quanlisinhvien/manage_tuition/view_createTuition/" class="btn btn-success">Tạo học phí mới</a>
+<a href="http://websinhvien.local/manage_tuition/view_createTuition/" class="btn btn-success">Tạo học phí mới</a>
 
 <!-- Modal chỉnh sửa học phí -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -57,7 +57,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="http://localhost/project_quanlisinhvien/manage_tuition/update_Tuition/">
+            <form method="POST" action="http://websinhvien.local/manage_tuition/update_Tuition/">
                 <div class="modal-body">
                     <!-- Học kỳ và năm học (ẩn đi) -->
                     <input type="hidden" name="HocKy" id="HocKy">

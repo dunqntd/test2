@@ -23,7 +23,7 @@
             <?php endif; ?>
 
             <!-- Form đăng nhập -->
-            <form action="http://localhost/project_quanlisinhvien/LoginController/authenticate" method="POST">
+            <form action="http://websinhvien.local/LoginController/authenticate" method="POST">
                 <div class="mb-3">
                     <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                 </div>

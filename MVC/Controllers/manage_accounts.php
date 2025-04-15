@@ -68,7 +68,7 @@ class manage_accounts extends Controller
         } else {
             echo '<script>alert("Không thể xóa tài khoản! Vui lòng thử lại.");</script>';
         }
-        echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/manage_accounts/Get_data";</script>';
+        echo '<script>window.location.href = "http://websinhvien.local/manage_accounts/Get_data";</script>';
         exit;
     }
     public function view_addAccount()
@@ -95,7 +95,7 @@ class manage_accounts extends Controller
                 echo '<script>alert("Thêm tài khoản thất bại. Vui lòng thử lại.");</script>';
             }
 
-            echo '<script>window.location.href = "http://localhost/project_quanlisinhvien/manage_accounts/Get_data";</script>';
+            echo '<script>window.location.href = "http://websinhvien.local/manage_accounts/Get_data";</script>';
             exit;
         }
     }
