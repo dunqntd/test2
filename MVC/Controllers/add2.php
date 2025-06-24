@@ -9,6 +9,7 @@
     <h1>khac roi</h1>   
      them 2 dong khac
     them mot dong
+    lai thich sua tiep
 >>>>>>> 5cf63baa16925493a0c88ba7473d71aadc745eb1
 </body>
 </html>
