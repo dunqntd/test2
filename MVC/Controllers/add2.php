@@ -6,11 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>tao yêu tất cả các em</h1>
-<<<<<<< HEAD
-    toi muon sua
-=======
-    sao cug dc tuy tao
->>>>>>> 6bf1dd36aa8173be678bc7066cbae769484d0d16
+    <h1>khac roi</h1>
 </body>
 </html>
